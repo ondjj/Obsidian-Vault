@@ -38,7 +38,9 @@
     "Obsidian Vault": [
       "Daily/9월",
       "Design-Patterns/Creational Pattern",
-      "Design-Patterns/Creational-Pattern"
+      "Design-Patterns/Creational-Pattern",
+      "Design-Patterns",
+      "MC-PARK"
     ]
   },
   "expandedSpaces": [
@@ -76,7 +78,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694438184362,
+  "spacesAutoBackupLast": 1694438818053,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",

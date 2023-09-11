@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "README.md.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "README.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "README.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md"
+                "file": "README.md.md"
               }
             }
           }
@@ -164,13 +164,16 @@
   },
   "active": "8b765d9f3ad3ae82",
   "lastOpenFiles": [
-    ".gitignore.md",
+    "MC-PARK/Infra.md",
+    "README.md.md",
+    "Note Name.md",
+    "Design-Patterns/Design-Patterns.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+    ".gitignore.md",
     ".giti.md",
     ".gitinore.txt.md",
     "Daily/9월/2023-09-11.md",
     "Design-Patterns/Creational-Pattern/Factory Method.md",
-    "Design-Patterns/Design-Patterns.md",
     "Design-Patterns/Creational-Pattern",
     "Design-Patterns",
     "Daily/9월/9월.md",
@@ -178,7 +181,6 @@
     "Daily/9월",
     "MC-PARK/MC-PARK.md",
     "MC-PARK/CICD 진행 과정.md",
-    "MC-PARK/Infra.md",
     "Daily/2023-09-11.md",
     "Daily/Untitled Kanban.md",
     "Daily",
