@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Design-Patterns/Creational-Pattern/Factory Method.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7b6118080d6488ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Design-Patterns/디자인 패턴 개요.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Design-Patterns/디자인 패턴 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Design-Patterns/디자인 패턴 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Design-Patterns/디자인 패턴 개요.md"
               }
             }
           }
@@ -162,14 +175,17 @@
       "markdown-importer:마크다운 형식 가져오기 열기": false
     }
   },
-  "active": "8b765d9f3ad3ae82",
+  "active": "7b6118080d6488ed",
   "lastOpenFiles": [
-    "Design-Patterns/Creational-Pattern/Factory Method.md",
     "README.md",
-    "MC-PARK/Infra.md",
-    "Note Name.md",
     "Design-Patterns/Design-Patterns.md",
+    "Design-Patterns/디자인 패턴 개요.md",
+    "MC-PARK/Infra.md",
+    "Design-Patterns/Creational-Pattern/Factory Method.md",
+    "conflict-files-obsidian-git.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+    "MC-PARK/CICD 진행 과정.md",
+    "Note Name.md",
     ".gitignore.md",
     ".giti.md",
     ".gitinore.txt.md",
@@ -180,7 +196,6 @@
     "Daily/Daily.md",
     "Daily/9월",
     "MC-PARK/MC-PARK.md",
-    "MC-PARK/CICD 진행 과정.md",
     "Daily/2023-09-11.md",
     "Daily/Untitled Kanban.md",
     "Daily",
