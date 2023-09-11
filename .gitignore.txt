@@ -6,5 +6,7 @@
 .obsidian/
 .trash
 ./MC-PARK/infra.md
+/Users/ondd/Documents/Obsidian Vault/MC-PARK/infra.md
+
 
 # End of https://www.toptal.com/developers/gitignore/api/obsidian

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md.md"
+                "file": "README.md"
               }
             }
           }
@@ -164,8 +164,9 @@
   },
   "active": "8b765d9f3ad3ae82",
   "lastOpenFiles": [
+    "Design-Patterns/Creational-Pattern/Factory Method.md",
+    "README.md",
     "MC-PARK/Infra.md",
-    "README.md.md",
     "Note Name.md",
     "Design-Patterns/Design-Patterns.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
@@ -173,7 +174,6 @@
     ".giti.md",
     ".gitinore.txt.md",
     "Daily/9월/2023-09-11.md",
-    "Design-Patterns/Creational-Pattern/Factory Method.md",
     "Design-Patterns/Creational-Pattern",
     "Design-Patterns",
     "Daily/9월/9월.md",
