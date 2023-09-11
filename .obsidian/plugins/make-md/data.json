@@ -37,11 +37,8 @@
   "expandedFolders": {
     "Obsidian Vault": [
       "Daily/9월",
-      "Design-Patterns",
-      "Design-Patterns",
       "Design-Patterns/Creational Pattern",
-      "Design-Patterns/Creational-Pattern",
-      "Daily"
+      "Design-Patterns/Creational-Pattern"
     ]
   },
   "expandedSpaces": [
@@ -79,7 +76,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694437630699,
+  "spacesAutoBackupLast": 1694438184362,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",
