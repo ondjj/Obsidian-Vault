@@ -8,29 +8,57 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8b765d9f3ad3ae82",
+            "id": "7b6118080d6488ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Factory Method.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7b6118080d6488ed",
+            "id": "1ce06fb4656fb677",
             "type": "leaf",
             "state": {
-              "type": "make-folder-view",
+              "type": "full-calendar-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "221a3d82289fcbb1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
               "state": {
-                "contextPath": "Mac-notes/JSP"
+                "file": "Mac-notes/JSP/Session.pdf"
+              }
+            }
+          },
+          {
+            "id": "54af1571d264c558",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Mac-notes/JSP/Session.pdf"
+              }
+            }
+          },
+          {
+            "id": "2c5d370fd9c28439",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Mac-notes/JSP/Session.pdf"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -105,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mac-notes/JSP/JSP.md",
+                "file": "Mac-notes/JSP/Session.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +150,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mac-notes/JSP/JSP.md",
+                "file": "Mac-notes/JSP/Session.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mac-notes/JSP/JSP.md"
+                "file": "Mac-notes/JSP/Session.pdf"
               }
             }
           }
@@ -170,18 +198,28 @@
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "templater-obsidian:Templater": false,
       "random-note:랜덤 노트 열기": false,
-      "markdown-importer:마크다운 형식 가져오기 열기": false
+      "markdown-importer:마크다운 형식 가져오기 열기": false,
+      "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "568a28575c0440f1",
+  "active": "2c5d370fd9c28439",
   "lastOpenFiles": [
+    "Highlights for Session.md",
+    "Mac-notes/JSP/Session.pdf",
+    "Daily/9월/2023-09-12.md",
+    "Daily/9월/2023-09-11.md",
+    "Daily/Daily.md",
+    "README.md",
+    "Mac-notes/Mac-notes.md",
     "Mac-notes/JSP/JSP.md",
+    "Mac-notes/JSP/정보 수정 Proc.pdf",
+    "Mac-notes/JSP/정보 수정 Form.pdf",
+    "Mac-notes/JSP/정보 삭제.pdf",
     "Mac-notes/JSP/context.mdb",
     "Mac-notes/JSP/Session-1.pdf",
     "Mac-notes/JSP/Cookie-1.md",
     "Mac-notes/JSP/Cookie.md",
     "Mac-notes/JSP/Session-1.md",
-    "Mac-notes/JSP/Session.pdf",
     "Mac-notes/JSP/Session.md",
     "Mac-notes/JSP/Cookie.pdf",
     "Template/Template.md",
@@ -196,20 +234,11 @@
     "Mac-notes/JSP/\bPaging.md",
     "Mac-notes/JSP/ConectionPool.md",
     "Mac-notes/JSP/JSP-MODEL2.md",
-    "Mac-notes/Mac-notes.md",
     "Mac-notes/JSP/.md",
-    "Mac-notes/JSP",
-    "README.md",
-    "Mac-notes",
     "무제 파일.md",
     "MC-PARK/CICD 진행 과정.md",
     "Design-Patterns/디자인 패턴 개요.md",
     "Design-Patterns/Design-Patterns.md",
-    "MC-PARK/Infra.md",
-    "Design-Patterns/Creational-Pattern/Factory Method.md",
-    "conflict-files-obsidian-git.md",
-    "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
-    "Design-Patterns/Creational-Pattern",
     "무제 파일.canvas"
   ]
 }

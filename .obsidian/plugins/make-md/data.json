@@ -40,9 +40,11 @@
       "Design-Patterns/Creational Pattern",
       "Template",
       "Mac-notes/JSP",
-      "Mac-notes",
       "Mac-notes/JSP",
-      "Mac-notes/JSP"
+      "Mac-notes/JSP",
+      "Mac-notes/JSP",
+      "Daily",
+      "Mac-notes"
     ]
   },
   "expandedSpaces": [
@@ -65,7 +67,7 @@
   "hiddenFiles": [
     "Context"
   ],
-  "lineNumbers": false,
+  "lineNumbers": true,
   "hiddenExtensions": [
     ".mdb"
   ],
@@ -80,7 +82,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694493889543,
+  "spacesAutoBackupLast": 1694494556757,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",
