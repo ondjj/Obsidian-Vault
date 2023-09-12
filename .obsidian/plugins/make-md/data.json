@@ -44,7 +44,9 @@
       "Mac-notes/JSP",
       "Mac-notes/JSP",
       "Mac-notes/JSP",
-      "Mac-notes"
+      "Mac-notes",
+      "Mac-notes/JSP",
+      "Mac-notes/JSP"
     ]
   },
   "expandedSpaces": [
@@ -82,7 +84,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694492784775,
+  "spacesAutoBackupLast": 1694493384373,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",

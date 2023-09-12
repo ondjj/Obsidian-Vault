@@ -8,15 +8,9 @@ Java-Standard-Tag-Libary
 ![](https://i.imgur.com/REeRrAC.png)
 
 📌 **활용**
-
-  
+![](https://i.imgur.com/xTZG96y.png)
 
 📌 **별 찍기**
-
-  
-
-  
-
-  
+![](https://i.imgur.com/GKtKuVA.png)
 
 #Model2
