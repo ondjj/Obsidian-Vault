@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2023-09-12.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "mode": "preview",
                 "source": false
               }
@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5,
-    "collapsed": true
+    "width": 238.5
   },
   "right": {
     "id": "86aa0991e046b57a",
@@ -116,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md"
+                "file": "Daily/9월/2023-09-12.md"
               }
             }
           }
@@ -187,13 +186,13 @@
   },
   "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
-    "README.md",
-    "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+    "Daily/2023-09-12.md",
     "Daily/9월/2023-09-12.md",
+    "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+    "README.md",
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
     "MC-PARK/MC-PARK.md",
-    "Daily/2023-09-12.md",
     "Mac-notes/JSP/Session.pdf",
     "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
