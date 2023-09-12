@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
                 "mode": "source",
                 "source": false
               }
@@ -99,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5
+    "width": 238.5,
+    "collapsed": true
   },
   "right": {
     "id": "86aa0991e046b57a",
@@ -115,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/9월/2023-09-12.md"
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md"
               }
             }
           }
@@ -184,14 +185,14 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "55d1e576b3420f9d",
+  "active": "38c6c3a04e9aa8b2",
   "lastOpenFiles": [
+    "Daily/9월/2023-09-12.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
     "MC-PARK/MC-PARK.md",
     "Daily/2023-09-12.md",
-    "Daily/9월/2023-09-12.md",
     "Mac-notes/JSP/Session.pdf",
     "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
