@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "file": "Daily/9월/2023-09-12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md"
+                "file": "Daily/9월/2023-09-12.md"
               }
             }
           }
@@ -184,8 +184,9 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "38c6c3a04e9aa8b2",
+  "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
+    "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
     "MC-PARK/MC-PARK.md",
@@ -221,7 +222,6 @@
     "Mac-notes/JSP/ConectionPool.md",
     "Mac-notes/JSP/JSP-MODEL2.md",
     "Mac-notes/JSP/.md",
-    "무제 파일.md",
     "무제 파일.canvas"
   ]
 }
