@@ -11,6 +11,6 @@ Study History Store with Obsidian
 
 # 사이드 프로젝트
 
-## Muscle Child park
+#### [Muscle Child park](https://github.com/Muscle-Child-Park/mcp-backend)
 
-## DND-9th
+#### [IT 연합 동아리 DND-9th NewPle](https://github.com/dnd-side-project/dnd-9th-4-backend)
