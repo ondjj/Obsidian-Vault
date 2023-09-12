@@ -15,7 +15,7 @@
   "saveAllContextToFrontmatter": true,
   "editorFlowStyle": "seamless",
   "autoOpenFileContext": false,
-  "activeView": "all",
+  "activeView": "root",
   "hideFrontmatter": true,
   "activeSpace": "",
   "spacesCompactMode": false,
@@ -43,15 +43,16 @@
       "Mac-notes/JSP",
       "Mac-notes/JSP",
       "Mac-notes/JSP",
-      "Daily",
-      "Mac-notes"
+      "MC-PARK",
+      "Design-Patterns",
+      "Design-Patterns/Creational-Pattern"
     ]
   },
   "expandedSpaces": [
     "/",
     null,
-    null,
-    "Obsidian Vault"
+    "Obsidian Vault",
+    null
   ],
   "expandFolderOnClick": true,
   "openFolders": [],
@@ -82,7 +83,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694494556757,
+  "spacesAutoBackupLast": 1694495189268,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",

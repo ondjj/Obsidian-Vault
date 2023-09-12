@@ -1,6 +1,9 @@
 {
-  "accentColor": "",
+  "accentColor": "#43699d",
   "cssTheme": "Wikipedia",
   "theme": "moonstone",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "textFontFamily": "AppleGothic",
+  "interfaceFontFamily": "Al Nile",
+  "monospaceFontFamily": "Apple SD Gothic Neo"
 }

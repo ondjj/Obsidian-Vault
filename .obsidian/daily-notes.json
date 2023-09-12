@@ -1,4 +1,5 @@
 {
-  "folder": "Daily",
-  "autorun": true
+  "folder": "Daily/9월",
+  "autorun": true,
+  "format": "YYYY-MM-DD"
 }

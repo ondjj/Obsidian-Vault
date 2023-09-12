@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Daily/2023-09-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -28,37 +28,19 @@
             }
           },
           {
-            "id": "221a3d82289fcbb1",
+            "id": "55d1e576b3420f9d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Mac-notes/JSP/Session.pdf"
-              }
-            }
-          },
-          {
-            "id": "54af1571d264c558",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Mac-notes/JSP/Session.pdf"
-              }
-            }
-          },
-          {
-            "id": "2c5d370fd9c28439",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Mac-notes/JSP/Session.pdf"
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -133,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mac-notes/JSP/Session.pdf",
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mac-notes/JSP/Session.pdf",
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -173,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mac-notes/JSP/Session.pdf"
+                "file": "Design-Patterns/Creational-Pattern/Prototype Pattern.md"
               }
             }
           }
@@ -202,11 +184,15 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "2c5d370fd9c28439",
+  "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
-    "Highlights for Session.md",
-    "Mac-notes/JSP/Session.pdf",
+    "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
+    "MC-PARK/CICD 진행 과정.md",
+    "MC-PARK/MC-PARK.md",
+    "Daily/2023-09-12.md",
     "Daily/9월/2023-09-12.md",
+    "Mac-notes/JSP/Session.pdf",
+    "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
     "Daily/Daily.md",
     "README.md",
@@ -236,9 +222,6 @@
     "Mac-notes/JSP/JSP-MODEL2.md",
     "Mac-notes/JSP/.md",
     "무제 파일.md",
-    "MC-PARK/CICD 진행 과정.md",
-    "Design-Patterns/디자인 패턴 개요.md",
-    "Design-Patterns/Design-Patterns.md",
     "무제 파일.canvas"
   ]
 }
