@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design-Patterns/디자인 패턴 개요.md",
+                "file": "Mac-notes/JSP/\bPaging.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design-Patterns/디자인 패턴 개요.md",
+                "file": "Mac-notes/JSP/\bPaging.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design-Patterns/디자인 패턴 개요.md",
+                "file": "Mac-notes/JSP/\bPaging.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design-Patterns/디자인 패턴 개요.md"
+                "file": "Mac-notes/JSP/\bPaging.md"
               }
             }
           }
@@ -177,14 +177,23 @@
   },
   "active": "7b6118080d6488ed",
   "lastOpenFiles": [
+    "Mac-notes/JSP/ConectionPool.md",
+    "Mac-notes/JSP/\bPaging.md",
+    "Mac-notes/JSP/JSP-MODEL2.md",
+    "Mac-notes/JSP/JSP.md",
+    "Mac-notes/Mac-notes.md",
+    "Mac-notes/JSP/.md",
+    "Mac-notes/JSP",
     "README.md",
-    "Design-Patterns/Design-Patterns.md",
+    "Mac-notes",
+    "무제 파일.md",
+    "MC-PARK/CICD 진행 과정.md",
     "Design-Patterns/디자인 패턴 개요.md",
+    "Design-Patterns/Design-Patterns.md",
     "MC-PARK/Infra.md",
     "Design-Patterns/Creational-Pattern/Factory Method.md",
     "conflict-files-obsidian-git.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
-    "MC-PARK/CICD 진행 과정.md",
     "Note Name.md",
     ".gitignore.md",
     ".giti.md",
