@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mac-notes/JSP/\bPaging.md",
+                "file": "Mac-notes/JSP/JSTL.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mac-notes/JSP/\bPaging.md",
+                "file": "Mac-notes/JSP/JSTL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mac-notes/JSP/\bPaging.md",
+                "file": "Mac-notes/JSP/JSTL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mac-notes/JSP/\bPaging.md"
+                "file": "Mac-notes/JSP/JSTL.md"
               }
             }
           }
@@ -177,10 +177,13 @@
   },
   "active": "7b6118080d6488ed",
   "lastOpenFiles": [
-    "Mac-notes/JSP/ConectionPool.md",
-    "Mac-notes/JSP/\bPaging.md",
-    "Mac-notes/JSP/JSP-MODEL2.md",
+    "Mac-notes/JSP/Model2 회원 가입 흐름.md",
+    "Mac-notes/JSP/JSTL.md",
+    "Template",
     "Mac-notes/JSP/JSP.md",
+    "Mac-notes/JSP/\bPaging.md",
+    "Mac-notes/JSP/ConectionPool.md",
+    "Mac-notes/JSP/JSP-MODEL2.md",
     "Mac-notes/Mac-notes.md",
     "Mac-notes/JSP/.md",
     "Mac-notes/JSP",
@@ -206,10 +209,8 @@
     "Daily/9월",
     "MC-PARK/MC-PARK.md",
     "Daily/2023-09-11.md",
-    "Daily/Untitled Kanban.md",
     "Daily",
     "MC-PARK",
-    "Red Light Therapy The Essential Guide Of The Miracle Near And InfraRed Light For Fat Loss Antiaging Muscle Gain And Brain Improvemen.md",
     "무제 파일.canvas",
     "Context/spacesLastSync.log",
     "Context"
