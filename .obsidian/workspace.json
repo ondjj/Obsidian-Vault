@@ -99,7 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 238.5
   },
   "right": {
     "id": "86aa0991e046b57a",
@@ -184,7 +184,7 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "55d1e576b3420f9d",
+  "active": "38c6c3a04e9aa8b2",
   "lastOpenFiles": [
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
