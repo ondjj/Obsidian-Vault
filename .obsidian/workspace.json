@@ -31,9 +31,11 @@
             "id": "55d1e576b3420f9d",
             "type": "leaf",
             "state": {
-              "type": "make-folder-view",
+              "type": "markdown",
               "state": {
-                "contextPath": "Mac-notes/Algorithms/Graph"
+                "file": "Daily/9월/2023-09-13.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -113,6 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Daily/9월/2023-09-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,6 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Daily/9월/2023-09-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +154,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Daily/9월/2023-09-13.md"
+              }
             }
           }
         ]
@@ -180,9 +186,11 @@
   },
   "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
+    "Algorithms/Data Structures/Data Structures.md",
+    "Web/Browser Rendering.md",
     "Database",
     "untitled folder",
-    "Network",
+    "Web",
     "Algorithms/String Matching/브루트-포스법(Brute Force method).pdf",
     "Algorithms/String Matching/보이어-무어법.pdf",
     "Algorithms/Sorting/선택 정렬 (Selection Sort).pdf",
@@ -190,7 +198,6 @@
     "Algorithms/Sorting/셸 정렬(Shell Sort).pdf",
     "Algorithms/Sorting/삽입 정렬 (Insertion Sort).pdf",
     "Algorithms/Sorting/버블 정렬 (Bubble Sort).pdf",
-    "Algorithms/Search/선형 배열 검색(Array Search).pdf",
     "Algorithms/Graph/Graph.md",
     "Algorithms/Algorithms.md",
     "Mac-notes/Algorithms/Graph/Graph.md",
@@ -215,7 +222,6 @@
     "Mac-notes/JSP/Cookie.md",
     "Mac-notes/JSP/Session-1.md",
     "Mac-notes/JSP/Session.md",
-    "Template/Template.md",
     "무제 파일.canvas"
   ]
 }

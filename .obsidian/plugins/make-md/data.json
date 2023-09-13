@@ -39,11 +39,11 @@
       "Daily/9월",
       "Design-Patterns/Creational Pattern",
       "Design-Patterns/Creational-Pattern",
-      "Mac-notes",
-      "Mac-notes",
       "Mac-notes/Algorithm",
       "Mac-notes/Algorithms",
-      "Mac-notes/Algorithms/Graph"
+      "Mac-notes/Algorithms/Graph",
+      "Network",
+      "Daily"
     ]
   },
   "expandedSpaces": [
@@ -81,7 +81,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694581989638,
+  "spacesAutoBackupLast": 1694582413301,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",
