@@ -9,3 +9,5 @@ Context/spacesLastSync.log
 .obsidian/
 .obsidian/*
 Context/*
+*.json
+*.mdb

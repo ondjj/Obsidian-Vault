@@ -42,10 +42,10 @@
       "Mac-notes/Algorithms",
       "Mac-notes/Algorithms/Graph",
       "Network",
-      "Daily",
-      "Daily",
-      "Daily",
-      "Template",
+      "Daily/9월",
+      "Daily/9월",
+      "Daily/9월",
+      "Daily/9월",
       "Daily/9월"
     ]
   },
@@ -84,7 +84,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694583789298,
+  "spacesAutoBackupLast": 1694584108411,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",
