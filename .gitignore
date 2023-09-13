@@ -1,7 +1,11 @@
 MC-PARK/Infra.md
-Daily/
+Daily/*
+.Daily
+Template/*
+Template/
 .obsidian/workspace.json
 Context/spacesLastSync.log
-.Daily
 .trash
-.obsidian
+.obsidian/
+.obsidian/*
+Context/*
