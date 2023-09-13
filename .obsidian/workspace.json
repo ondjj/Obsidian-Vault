@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7b6118080d6488ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily/9월/2023-09-12.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "1ce06fb4656fb677",
             "type": "leaf",
             "state": {
@@ -31,14 +19,16 @@
             "id": "55d1e576b3420f9d",
             "type": "leaf",
             "state": {
-              "type": "make-folder-view",
+              "type": "markdown",
               "state": {
-                "contextPath": "Daily"
+                "file": "Template/Todo-Template.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -113,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Template/Todo-Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Template/Todo-Template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +142,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Template/Todo-Template.md"
+              }
             }
           }
         ]
@@ -180,8 +174,14 @@
   },
   "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
-    "Daily/Daily.md",
     "Daily/9월/2023-09-13.md",
+    "Daily/9월/9월.md",
+    "Template/Todo-Template.md",
+    "Template/\b.md",
+    "Template/Template.md",
+    "Daily/9월",
+    "Daily/Daily.md",
+    "MC-PARK/MC-PARK.md",
     "Algorithms/Data Structures/Data Structures.md",
     "Web/Browser Rendering.md",
     "Database",
@@ -193,7 +193,6 @@
     "Algorithms/String Matching/KMP법.pdf",
     "Algorithms/Sorting/셸 정렬(Shell Sort).pdf",
     "Algorithms/Sorting/삽입 정렬 (Insertion Sort).pdf",
-    "Algorithms/Sorting/버블 정렬 (Bubble Sort).pdf",
     "Algorithms/Graph/Graph.md",
     "Algorithms/Algorithms.md",
     "Mac-notes/Algorithms/Graph/Graph.md",
@@ -208,14 +207,9 @@
     "README.md",
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
-    "MC-PARK/MC-PARK.md",
     "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
     "Mac-notes/JSP/JSP.md",
-    "Mac-notes/JSP/Cookie-1.md",
-    "Mac-notes/JSP/Cookie.md",
-    "Mac-notes/JSP/Session-1.md",
-    "Mac-notes/JSP/Session.md",
     "무제 파일.canvas"
   ]
 }
