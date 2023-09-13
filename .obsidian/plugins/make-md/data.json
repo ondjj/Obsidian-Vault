@@ -40,7 +40,9 @@
       "Design-Patterns/Creational Pattern",
       "Design-Patterns/Creational-Pattern",
       "Mac-notes",
-      "Mac-notes/JSP"
+      "Mac-notes",
+      "Mac-notes/Algorithm",
+      "Mac-notes/Algorithms"
     ]
   },
   "expandedSpaces": [
@@ -78,7 +80,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694580807407,
+  "spacesAutoBackupLast": 1694581469022,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",

@@ -31,11 +31,9 @@
             "id": "55d1e576b3420f9d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "make-folder-view",
               "state": {
-                "file": "Daily/9월/2023-09-13.md",
-                "mode": "source",
-                "source": false
+                "contextPath": "Mac-notes/Algorithms"
               }
             }
           }
@@ -115,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/9월/2023-09-13.md",
+                "file": "Mac-notes/Algorithms/Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily/9월/2023-09-13.md",
+                "file": "Mac-notes/Algorithms/Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/9월/2023-09-13.md"
+                "file": "Mac-notes/Algorithms/Algorithms.md"
               }
             }
           }
@@ -186,20 +184,23 @@
   },
   "active": "38c6c3a04e9aa8b2",
   "lastOpenFiles": [
-    "Mac-notes/JSP/한글 깨짐 이슈:port 변경.pdf",
-    "Mac-notes/JSP/스크립틀릿:지시자:표현식.pdf",
-    "Mac-notes/JSP/모든 DB 정보 가져오기.pdf",
-    "Mac-notes/JSP/데이터 처리를 위한 쿼리.pdf",
-    "Mac-notes/JSP/개인 DB 상세 정보 가져오기.pdf",
-    "Mac-notes/JSP/UseBean.pdf",
-    "Mac-notes/JSP/Response.pdf",
-    "Mac-notes/JSP/Request.pdf",
-    "Mac-notes/JSP/README.md",
-    "Mac-notes/JSP/Oracle  : OJDBC : 이클립스 연동.pdf",
-    "Mac-notes/JSP/Java Bean.pdf",
-    "Mac-notes/JSP/Include 디렉티브.pdf",
-    "Daily/9월/2023-09-12.md",
+    "Mac-notes/Algorithms/Search/배열 검색(Array Search).pdf",
+    "Mac-notes/Algorithms/Search/선형 배열 검색(Array Search).pdf",
+    "Mac-notes/Algorithms/String Matching/KMP법.pdf",
+    "Mac-notes/Algorithms/Sorting/셸 정렬(Shell Sort).pdf",
+    "Mac-notes/Algorithms/Sorting/버블 정렬 (Bubble Sort).pdf",
+    "Mac-notes/Algorithms/Sorting/선택 정렬 (Selection Sort).pdf",
+    "Mac-notes/Algorithms/Sorting/삽입 정렬 (Insertion Sort).pdf",
+    "Mac-notes/Algorithms/String Matching",
+    "Mac-notes/Algorithms/Backtracking",
+    "Mac-notes/Algorithms/Dynamic Programming",
+    "Mac-notes/Algorithms/Greedy",
+    "Mac-notes/Algorithms/Algorithms.md",
+    "Mac-notes/Algorithms/Algorithm.md",
+    "Mac-notes/Mac-notes.md",
     "Daily/9월/2023-09-13.md",
+    "Mac-notes/JSP/README.md",
+    "Daily/9월/2023-09-12.md",
     "Daily/2023-09-12.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
     "README.md",
@@ -209,7 +210,6 @@
     "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
     "Daily/Daily.md",
-    "Mac-notes/Mac-notes.md",
     "Mac-notes/JSP/JSP.md",
     "Mac-notes/JSP/Cookie-1.md",
     "Mac-notes/JSP/Cookie.md",
@@ -220,8 +220,6 @@
     "Mac-notes/JSP/Expression Language.md",
     "Mac-notes/JSP/쿼리문과 execute.md",
     "Mac-notes/JSP/JSTL.md",
-    "Mac-notes/JSP/Model2 회원 가입 흐름.md",
-    "Mac-notes/JSP/\bPaging.md",
     "무제 파일.canvas"
   ]
 }
