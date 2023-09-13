@@ -33,8 +33,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
-                "mode": "preview",
+                "file": "Daily/9월/2023-09-13.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Daily/9월/2023-09-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily/9월/2023-09-12.md",
+                "file": "Daily/9월/2023-09-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/9월/2023-09-12.md"
+                "file": "Daily/9월/2023-09-13.md"
               }
             }
           }
@@ -184,44 +184,44 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "55d1e576b3420f9d",
+  "active": "38c6c3a04e9aa8b2",
   "lastOpenFiles": [
-    "Daily/2023-09-12.md",
+    "Mac-notes/JSP/한글 깨짐 이슈:port 변경.pdf",
+    "Mac-notes/JSP/스크립틀릿:지시자:표현식.pdf",
+    "Mac-notes/JSP/모든 DB 정보 가져오기.pdf",
+    "Mac-notes/JSP/데이터 처리를 위한 쿼리.pdf",
+    "Mac-notes/JSP/개인 DB 상세 정보 가져오기.pdf",
+    "Mac-notes/JSP/UseBean.pdf",
+    "Mac-notes/JSP/Response.pdf",
+    "Mac-notes/JSP/Request.pdf",
+    "Mac-notes/JSP/README.md",
+    "Mac-notes/JSP/Oracle  : OJDBC : 이클립스 연동.pdf",
+    "Mac-notes/JSP/Java Bean.pdf",
+    "Mac-notes/JSP/Include 디렉티브.pdf",
     "Daily/9월/2023-09-12.md",
+    "Daily/9월/2023-09-13.md",
+    "Daily/2023-09-12.md",
     "Design-Patterns/Creational-Pattern/Prototype Pattern.md",
     "README.md",
     "Design-Patterns/Creational-Pattern/Creational-Pattern.md",
     "MC-PARK/CICD 진행 과정.md",
     "MC-PARK/MC-PARK.md",
-    "Mac-notes/JSP/Session.pdf",
     "Highlights for Session.md",
     "Daily/9월/2023-09-11.md",
     "Daily/Daily.md",
     "Mac-notes/Mac-notes.md",
     "Mac-notes/JSP/JSP.md",
-    "Mac-notes/JSP/정보 수정 Proc.pdf",
-    "Mac-notes/JSP/정보 수정 Form.pdf",
-    "Mac-notes/JSP/정보 삭제.pdf",
-    "Mac-notes/JSP/context.mdb",
-    "Mac-notes/JSP/Session-1.pdf",
     "Mac-notes/JSP/Cookie-1.md",
     "Mac-notes/JSP/Cookie.md",
     "Mac-notes/JSP/Session-1.md",
     "Mac-notes/JSP/Session.md",
-    "Mac-notes/JSP/Cookie.pdf",
     "Template/Template.md",
-    "Mac-notes/JSP/Cookie-1.pdf",
     "Mac-notes/JSP/Session-2.md",
-    "Mac-notes/JSP/Session-2.pdf",
     "Mac-notes/JSP/Expression Language.md",
     "Mac-notes/JSP/쿼리문과 execute.md",
     "Mac-notes/JSP/JSTL.md",
     "Mac-notes/JSP/Model2 회원 가입 흐름.md",
-    "Template",
     "Mac-notes/JSP/\bPaging.md",
-    "Mac-notes/JSP/ConectionPool.md",
-    "Mac-notes/JSP/JSP-MODEL2.md",
-    "Mac-notes/JSP/.md",
     "무제 파일.canvas"
   ]
 }

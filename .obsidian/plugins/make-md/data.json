@@ -38,11 +38,9 @@
     "Obsidian Vault": [
       "Daily/9월",
       "Design-Patterns/Creational Pattern",
-      "Mac-notes/JSP",
-      "Mac-notes/JSP",
-      "Mac-notes/JSP",
-      "Mac-notes/JSP",
-      "Design-Patterns/Creational-Pattern"
+      "Design-Patterns/Creational-Pattern",
+      "Mac-notes",
+      "Mac-notes/JSP"
     ]
   },
   "expandedSpaces": [
@@ -80,7 +78,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694520917033,
+  "spacesAutoBackupLast": 1694580807407,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",
