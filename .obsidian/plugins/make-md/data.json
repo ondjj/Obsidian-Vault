@@ -42,7 +42,8 @@
       "Mac-notes",
       "Mac-notes",
       "Mac-notes/Algorithm",
-      "Mac-notes/Algorithms"
+      "Mac-notes/Algorithms",
+      "Mac-notes/Algorithms/Graph"
     ]
   },
   "expandedSpaces": [
@@ -80,7 +81,7 @@
   "spacesSyncTimeoutSeconds": 10,
   "spacesAutoBackup": true,
   "spacesAutoBackupInterval": 10,
-  "spacesAutoBackupLast": 1694581469022,
+  "spacesAutoBackupLast": 1694581989638,
   "spacesUseAlias": false,
   "precreateVaultSpace": true,
   "fmKeyAlias": "aliases",

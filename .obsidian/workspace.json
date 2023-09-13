@@ -33,7 +33,7 @@
             "state": {
               "type": "make-folder-view",
               "state": {
-                "contextPath": "Mac-notes/Algorithms"
+                "contextPath": "Mac-notes/Algorithms/Graph"
               }
             }
           }
@@ -113,7 +113,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mac-notes/Algorithms/Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +129,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mac-notes/Algorithms/Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,9 +150,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Mac-notes/Algorithms/Algorithms.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -182,20 +178,24 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "38c6c3a04e9aa8b2",
+  "active": "55d1e576b3420f9d",
   "lastOpenFiles": [
-    "Mac-notes/Algorithms/Search/배열 검색(Array Search).pdf",
-    "Mac-notes/Algorithms/Search/선형 배열 검색(Array Search).pdf",
-    "Mac-notes/Algorithms/String Matching/KMP법.pdf",
-    "Mac-notes/Algorithms/Sorting/셸 정렬(Shell Sort).pdf",
-    "Mac-notes/Algorithms/Sorting/버블 정렬 (Bubble Sort).pdf",
-    "Mac-notes/Algorithms/Sorting/선택 정렬 (Selection Sort).pdf",
-    "Mac-notes/Algorithms/Sorting/삽입 정렬 (Insertion Sort).pdf",
-    "Mac-notes/Algorithms/String Matching",
-    "Mac-notes/Algorithms/Backtracking",
-    "Mac-notes/Algorithms/Dynamic Programming",
-    "Mac-notes/Algorithms/Greedy",
+    "Database",
+    "untitled folder",
+    "Network",
+    "Algorithms/String Matching/브루트-포스법(Brute Force method).pdf",
+    "Algorithms/String Matching/보이어-무어법.pdf",
+    "Algorithms/Sorting/선택 정렬 (Selection Sort).pdf",
+    "Algorithms/String Matching/KMP법.pdf",
+    "Algorithms/Sorting/셸 정렬(Shell Sort).pdf",
+    "Algorithms/Sorting/삽입 정렬 (Insertion Sort).pdf",
+    "Algorithms/Sorting/버블 정렬 (Bubble Sort).pdf",
+    "Algorithms/Search/선형 배열 검색(Array Search).pdf",
+    "Algorithms/Graph/Graph.md",
+    "Algorithms/Algorithms.md",
+    "Mac-notes/Algorithms/Graph/Graph.md",
     "Mac-notes/Algorithms/Algorithms.md",
+    "Mac-notes/Algorithms/Data Structures.md",
     "Mac-notes/Algorithms/Algorithm.md",
     "Mac-notes/Mac-notes.md",
     "Daily/9월/2023-09-13.md",
@@ -216,10 +216,6 @@
     "Mac-notes/JSP/Session-1.md",
     "Mac-notes/JSP/Session.md",
     "Template/Template.md",
-    "Mac-notes/JSP/Session-2.md",
-    "Mac-notes/JSP/Expression Language.md",
-    "Mac-notes/JSP/쿼리문과 execute.md",
-    "Mac-notes/JSP/JSTL.md",
     "무제 파일.canvas"
   ]
 }
