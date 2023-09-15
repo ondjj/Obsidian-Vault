@@ -4,13 +4,15 @@ tags:
 ---
 ## 목차
 
-1. [개요](#개요)
-2. [2.1_The_class_File_Format](#The_class_File_Format)
-3. [2.2_Data_Types](#2.2_Data_Types)
-4. [2.3_Primitive_Types_and_Values](#2.3_Primitive_Types_and_Values)
-5. [2.3.1_Integral_Types_and_Values](#2.3.1_Integral_Types_and_Values)
-6. [2.3.2_Floating-Point_Types and_Values](#2.3.2_Floating-Point_Types and_Values)
-7. [2.3.3_The_returnAddress_Type_and_Values](#2.3.3_The_returnAddress_Type_and_Values)
+1. [2.1_The_class_File_Format](#The_class_File_Format)
+2. [2.2_Data_Types](#2.2_Data_Types)
+3. [2.3_Primitive_Types_and_Values](#2.3_Primitive_Types_and_Values)
+	1. [2.3.1_Integral_Types_and_Values](##2.3.1_Integral_Types_and_Values)
+	2. [2.3.2_Floating_Point_Types_and_Values](##2.3.2_Floating_Point_Types_and_Values)
+	3. [2.3.3_The_returnAddress_Type_and_Values](##2.3.3_The_returnAddress_Type_and_Values)
+	4. [2.3.4_The_boolean_Type](##2.3.4_The_boolean_Type)
+4. [2.4_Reference_Types_and_Values](#2.4_Reference_Types_and_Values])
+5. [2.5_Run-Time_Data_Areas](#2.5_Run-Time_Data_Areas)
 
 
 # 개요
@@ -62,7 +64,7 @@ JVM에서 지원하는 기본 데이터 유형은 `numeric types, boolean type (
 Java® Virtual Machine Specification의 First Edition에서는 `boolean을` JVM 유형으로 간주하지 않았습니다. 하지만 JVM에서는 `boolean` 값이 제한적으로 지원됩니다. Java® Virtual Machine Specification의 Second Edition에서는 `boolean을` 유형으로 취급하여 문제를 명확히 했습니다.`returnAddress`유형의 값은 JVM 명령의 `opcode`에 대한 포인터입니다. 기본 유형 중 `returnAddress` 유형만 Java 프로그래밍 언어 유형과 직접 연결되지 않습니다.
 
 
-# 2.3.1_Integral_Types_and_Values
+## 2.3.1_Integral_Types_and_Values
 
 JVM의 integral types 유형 값은 다음과 같습니다.
 
@@ -72,7 +74,7 @@ JVM의 integral types 유형 값은 다음과 같습니다.
 - long : - -9223372036854775808 to 9223372036854775807 ($-2^{63}$ to $2^{63}- 1$), 포함
 - char :  0 ~ 65535, 포함
 
-# 2.3.2_Floating-Point_Types and_Values
+## 2.3.2_Floating_Point_Types_and_Values
 
 floating-point type은 IEEE 754 표준(JLS § 1.7)에 명시된 대로 IEEE 754 값 및 연산을 위한 32-bit binary32 및 64-bit binary64 floating-point formats와 개념적으로 연관되어 있습니다.
 
@@ -93,7 +95,7 @@ IEEE 754는 부호와 크기로 이루어진 양수와 음수 숫자 뿐만 아�
 
 매개변수 N과 K (그리고 파생된 매개변수 Emin과 Emax)에 대한 제약사항은 float와 double에 대한 Table 2.3.2-A에 요약되어 있습니다.
 
-# 2.3.2-A. Floating-point parameters 표
+## 2.3.2-A. Floating-point parameters 표
 
 
 ![](https://i.imgur.com/5Ak5OfU.png)
@@ -108,4 +110,29 @@ IEEE 754에 따라 NaN이 아닌 인자를 가지고 수행되는 부동 소수�
 
 NaN은 순서가 없으므로 숫자 비교 및 숫자 동등성 테스트는 그들의 피연산자 중 하나 이상이 NaN인 경우 값이 false입니다. 특히, 어떤 값에 대한 숫자 동등성 테스트는 값이 NaN이면 값은 false이며, 숫자 불일치 테스트는 어떤 피연산자가 NaN인 경우 값이 true입니다.
 
-# 2.3.3_The_returnAddress_Type_and_Values
+## 2.3.3_The_returnAddress_Type_and_Values
+  
+returnAddress 유형은 자바 가상 머신의 jsr, ret 및 jsr_w 명령어에서 사용됩니다 (§jsr, §ret, §jsr_w). returnAddress 유형의 값은 자바 가상 머신 명령어의 `opcode`를 가리키는 포인터입니다. numeric primitive 타입과는 달리 returnAddress 유형은 어떤 자바 프로그래밍 언어 유형과도 대응하지 않으며 실행 중인 프로그램에서 수정할 수 없습니다.
+
+
+## 2.3.4_The_boolean_Type
+
+자바 가상 머신은 boolean 유형을 정의하지만, 이에 대한 매우 제한적인 지원만 제공합니다. 자바 가상 머신 명령어 중에서는 boolean 값을 처리하는 데 특화된 명령어가 없습니다. 
+대신, 자바 프로그래밍 언어에서 boolean 값을 처리하는 표현식은 JVM int 데이터 유형의 값을 사용하도록 컴파일됩니다.
+
+자바 가상 머신은 직접적으로 boolean 배열을 지원합니다. newarray 명령어(§newarray)를 사용하여 boolean 배열을 생성할 수 있습니다. boolean 유형의 배열은 byte 배열 명령어인 baload 및 bastore(§baload, §bastore)를 사용하여 액세스하고 수정합니다.
+
+오라클의 자바 가상 머신 구현에서는 자바 프로그래밍 언어의 boolean 배열을 8비트로 인코딩한 JVM 바이트 배열로 처리합니다. 자바 프로그래밍 언어의 boolean 값이 컴파일러에 의해 자바 가상 머신 int 유형의 값으로 매핑되는 경우, 컴파일러는 동일한 인코딩을 사용해야 합니다. 여기서 1은 true를 나타내고 0은 false를 나타내는 데 사용됩니다.
+
+# 2.4_Reference_Types_and_Values
+
+Reference Types은 세 가지 종류가 있습니다:
+
+- 클래스 유형, 배열 유형 및 인터페이스 유형입니다. 이들의 값은 동적으로 생성된 클래스 인스턴스, 배열 또는 인터페이스를 구현한 클래스 인스턴스 또는 배열에 대한 참조입니다.
+
+- 배열 유형은 길이가 유형에 의해 지정되지 않는 단일 차원의 구성 유형으로 구성됩니다. 배열 유형의 구성 요소 유형 자체도 배열 유형일 수 있습니다. 어떤 배열 유형에서 시작하여 해당 구성 요소 유형을 고려하고, 그 구성 요소 유형도 배열 유형이라면, 그 유형의 구성 요소 유형을 고려하고 이를 반복하면, 결국 배열 유형이 아닌 구성 요소 유형에 도달해야 합니다. 이를 배열 유형의 요소 유형(element type)이라고 합니다. 배열 유형의 요소 유형은 반드시 원시 유형, 클래스 유형 또는 인터페이스 유형 중 하나여야 합니다.
+
+- 참조 값은 특별한 null 참조일 수도 있으며, 이것은 어떠한 객체도 가리키지 않는 참조를 나타냅니다. 여기서는 null로 표시됩니다. null 참조는 처음에는 실행 시간 유형이 없지만, 어떤 유형으로든 형변환될 수 있습니다. 참조 유형의 기본 값은 null입니다. 이 명세서는 null 값을 구체적으로 인코딩하도록 규정하지 않습니다.
+
+
+# 2.5_Run-Time_Data_Areas
