@@ -113,7 +113,7 @@ java라는 이름의 패키지의 하위 패키지를 참조할 때마다 부트
 
 
 
-# 1.5 Fedback
+# 1.5 Feedback
 
 - 독자는 Java® Virtual Machine Specification의 기술적 오류와 모호성을 jls-jvms-spec-comments@openjdk.java.net 에 보고할 수 있습니다.  
 - javac(자바 프로그래밍 언어의 참조 컴파일러)에 의한 클래스 파일 생성 및 조작에 관한 질문은 컴파일러- dev@openjdk.java.net 로 전송할 수 있습니다.
