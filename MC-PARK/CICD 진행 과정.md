@@ -18,3 +18,4 @@ sticker: lucide//arrow-up-down
 	- [ ] CI Workflow 생성
 	- [ ] CD Workflow 생성
 	- [ ] Sercrets 등록
+
