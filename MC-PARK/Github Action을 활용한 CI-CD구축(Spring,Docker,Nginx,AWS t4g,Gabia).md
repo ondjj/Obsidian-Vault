@@ -1,11 +1,13 @@
 
 ## 목차
 
-1. [EC2_인스턴스_생성(t4g)](#EC2_인스턴스_생성(t4g)
+1. [EC2_인스턴스_생성(t4g)](#EC2_인스턴스_생성(t4g))
 2. [RDS_생성하기](#RDS_생성하기)
 3. [S3_버킷_생성](#S3_버킷_생성)
 4. [EC2_인스턴스에_Docker_docker-compose_설치](#EC2_인스턴스에_Docker_docker-compose_설치)
 5. [가비아_도메인_등록](#가비아_도메인_등록)
+6. [ACM_인증서_발급받기](#ACM_인증서_발급받기)
+7. [Github-Actions-Docker-compose](#Github-Actions-Docker-compose)
 
 
 # 1. EC2_인스턴스_생성(t4g)
@@ -668,3 +670,604 @@ NS에 해당하는 라우팅 대상을 복사해고 레코드 생성을 클릭�
 
 위에서 확인한 가비아 네임 서버 관리 페이지에 라우팅 대상을 네임서버 주소로 등록한다.
 
+![](https://i.imgur.com/enycwnU.png)
+
+# ACM_인증서_발급받기
+
+
+### ACM에서 SSL 인증서 발급
+
+먼저, AWS에서 Certificate Manager 서비스 접근 후 인증서 요청 버튼을 누른다.
+
+![](https://i.imgur.com/HBMqFP6.png)
+
+
+발급받았던 도메인을 입력하고 DNS 검증을 선택하고 태그는 선택적으로 추가한다. 그리고 입력한 내용에 틀린 부분은 없는지 확인하고 확인 및 요청을 눌러 생성하자
+
+그러면 아래와 같이 검증을 시작하고 승인을 받으려면 추가적인 작업이 필요하다. 아래 사진처럼 Route 53에서 레코드 생성을 누르자
+
+![](https://i.imgur.com/N8n3EGj.png)
+
+그 뒤 Route 53에 자신의 도메인을 클릭하면 아래와 같이 레코드 세트가 추가된 것을 확인할 수 있고 최대 30분 정도 승인요청이 소요될 수 있다.
+
+### EC2 로드 밸런서 설정
+
+다음은 EC2 로드 밸런서 설정을 해야합니다. EC2 서비스에 들어가서 좌측 메뉴에서 로드 밸런서를 들어가주세요. 그리고 로드 밸런서 생성을 클릭합니다.
+
+왼쪽 상단의 로드밸런서 생성을 선택합니다.
+
+![](https://i.imgur.com/KvbPCv4.png)
+`Application Load Balancer` 으로 생성해도 되지만 영문과 복잡한 구조로 되어있기 때문에, `Classic Load Balance`으로 생성한다.
+
+Classic으로 생성한 후 마법사를 돌리면 `Application Load Balancer`과 같은 결과를 가져다 준다.
+
+![](https://i.imgur.com/2dsdZtt.png)
+
+
+Load Balancer 이름 작성 후 HTTPS(보안 HTTP)를 선택해 아래 사진과 같도록 하자
+
+
+![](https://i.imgur.com/TfoOjyf.png)
+
+그다음 EC2 인스턴스의 보안그룹을 선택해 주시고 다음을 누른다.
+
+![](https://i.imgur.com/9KgqIrF.png)
+그리고 ACM에서 인증서 선택창을 누르고 이전에 발급받았던 인증서를 선택
+
+![](https://i.imgur.com/8YVyvXF.png)
+
+그리고 상태 검사를 구성으로 넘어오게 되는데, 변경할 것은 없다.
+
+![](https://i.imgur.com/LqfI8KQ.png)
+
+
+![](https://i.imgur.com/JwxcDkK.png)
+
+
+마지막으로 태그를 추가할 것이 있다면 추가하고 검토 및 생성한다.
+
+클래식 로드밸런서로 생성했는데, 차세대 로드밸런서로 선택하기 위해 사진에서 보이는 것처럼 _지금 마이그레이션_을 선택하면 차세대 로드밸런서로 사용할 수 있다.(마이그레이션 후 기존의 클래식 로드밸런서는 삭제!)
+
+![](https://i.imgur.com/U2q48zM.png)
+
+## Route 53 설정
+
+다시 Route 53 서비스의 등록한 도메인 호스팅 영역에서 **유형 A의 레코드 세트**를 선택하고, 별칭을 예로 선택하신 뒤, 별칭 대상에서 만든 로드 밸런서를 선택 후 저장한다.
+
+![](https://i.imgur.com/g6nPgs8.png)
+
+# Nginx 설정
+
+여기까지 무탈히 왔다면 다음은 Nginx 설정을 통해 Reverse Proxy를 구현하고, 인스턴스 내에 도커로 스프링부트 이미지를 올리면 모든 과정이 완료된다.
+
+먼저 인스턴스에 Nginx를 설치하자
+
+- `sudo apt-get update`  
+- `sudo apt install nginx -y`  
+- `nginx -v` : Nginx 버전 확인  
+- `sudo service nginx status` : Nginx 상태 확인
+
+![](https://i.imgur.com/MTgvaQ4.png)
+
+만약 active상태가 아니라면 `sudo service nginx start`커맨드를 입력해 서버를 실행한다.
+
+## Nginx 설정 파일 생성하기
+
+서버가 올라가는 EC2 인스턴스 `etc/nginx/sites-available/springworld.site`에서 HTTP 요청을 HTTPS 로 받아 처리할 수 있도록 코드만 추가한다. 
+사진과 같이 아래의 코드(if문)를 추가
+
+```null
+sudo vi /etc/nginx/sites-available/{your domain}`
+```
+
+## Nginx 서버 연동
+
+### Proxy 설정
+
+```ubuntu
+sudo mkdir /var/log/nginx/proxy/	# log, error 파일이 들어갈 디렉토리 생성
+sudo vi /etc/nginx/proxy_params
+```
+
+포트번호가 80인 http에서 요청이 오면, Spring Boot 프로젝트에서 8088번 포트를 바라볼 수 있도록 proxy 설정을 해주겠습니다.`proxy_params`에 아래의 코드를 붙여넣어줍니다.
+
+```null
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host $http_host;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header X-NginX-Proxy true;
+
+client_max_body_size 256M;
+client_body_buffer_size 1m;
+
+proxy_buffering on;
+proxy_buffers 256 16k;
+proxy_buffer_size 128k;
+proxy_busy_buffers_size 256k;
+
+proxy_temp_file_write_size 256k;
+proxy_max_temp_file_size 1024m;
+
+proxy_connect_timeout 300;
+proxy_send_timeout 300;
+proxy_read_timeout 300;
+proxy_intercept_errors on;
+```
+
+## 서버 블록 생성
+
+현재 가지고 있는 도메인과 jar 파일을 이용하기 위해서 기본 구성 파일을 수정해 서버 블록을 생성하자  
+명령어 `sudo vi /etc/nginx/sites-available/{domain}`를 입력 후, 아래 코드를 복사해 붙여넣어준다.
+
+```javascript
+server { 
+        listen 80;
+
+    server_name mcpark.info;
+
+    access_log /var/log/nginx/proxy/access.log;
+    error_log /var/log/nginx/proxy/error.log;
+
+    location / { # location 블록
+        include /etc/nginx/proxy_params;
+        proxy_pass http://{yourdomain or public ip addr};# reverse proxy의 기능
+    }
+}
+```
+
+이 코드를 추가하면서 location 블록의 `proxy_pass`를 통해 8088번 포트를 통해 접속해야 볼 수 있는 화면(Spring Boot 프로젝트 화면)을 80번(HTTP) 포트에 접속했을 때 확인할 수 있도록 설정, 
+즉 `Reverse proxy`의 기능을 하게 할 수 있다.
+
+Nginx는 이제 listen 지시문에 의해 포트 번호 80으로 들어오는 요청들에 대해 server_name 값과 정확하게 일치하는 서버 블록을 찾으려고 시도하고 
+만약 server_name을 추가할 때 해시 버킷 메모리 문제가 발생할 수 있기에 `/etc/nginx/nginx.conf`파일에서 옵션을 조정한다.
+
+```null
+http { ...
+	server_names hash_bucke_size 64;	# 주석 처리를 제거
+	...
+}
+```
+
+### 새로 생성한 파일 활성화
+
+서버블록까지 생성하였으니 새로 생성한 파일을 활성화가 필요하다.
+
+`sites-available` 디렉토리로부터 site-enabled 디렉토리에 대한 링크를 생성해 파일을 활성화한다.
+
+```null
+$ sudo ln -sf /etc/nginx/sites-available/{domain} /etc/nginx/sites-enabled/
+```
+
+**기본 구성 파일 삭제**
+
+sites-available 디렉토리와 sites-enabled 디렉토리에서 명령어 `ls -al`을 실행해보면 원래 nginx 서버를 연결하던 _default_ 파일이 새로 생성한 파일과 함께 보이는데
+
+이대로 연결하면 연결이 되지 않기 때문에 Default 파일을 삭제한다.
+
+```null
+sudo rm  /etc/nginx/sites-available/default
+sudo rm  /etc/nginx/sites-enabled/default
+```
+
+### Nginx 재시작
+
+Nginx에 대해 구문 오류가 없는지 테스트하고 재시작한다.
+
+```null
+sudo nginx -t
+sudo service nginx reload
+```
+
+### Nginxx Http 요청을 HTTPS로 리다이렉트 설정하기
+
+이제 거의 다 되었습니다.`/etc/nginx/sites-available/springworld.site`에서 HTTP 요청을 HTTPS 로 받아 처리할 수 있도록 코드만 추가하자 사진과 같이 아래의 코드(if문)를 추가
+
+```null
+sudo vi /etc/nginx/sites-available/springworld.site
+```
+
+위의 명령어를 입력하고 if문을 추가합니다.
+
+```null
+    if ($http_x_forwarded_proto = 'http'){
+    return 301 https://$host$request_uri;
+    }
+```
+
+server {
+        listen 80;
+
+    server_name mcpark.info;
+
+    access_log /var/log/nginx/proxy/access.log;
+    error_log /var/log/nginx/proxy/error.log;
+
+    location / { # location 블록
+        include /etc/nginx/proxy_params;
+        proxy_pass http://3.37.60.128:8080;# reverse proxy의 기능
+
+        if ($http_x_forwarded_proto = 'http'){
+                 return 301 https://$host$request_uri;
+        }
+    }
+}
+
+설정값이 변경되었으니 아래의 명령어를 입력
+
+```null
+$ sudo ln -sf /etc/nginx/sites-available/{domain} /etc/nginx/sites-enabled/
+ 
+```
+
+nginx 리부팅
+
+```null
+$ sudo systemctl daemon-reload && sudo systemctl restart nginx
+```
+
+
+# Github-Actions-Docker-compose
+
+Github Actions를 이용하여 스프링부트를 자동 배포해보자.
+
+스프링 프로젝트를 Docker 컨테이너에 올리기 위해서는`Dokerfile`을 작성해야 한다. Spring Boot로 만들어진 Web Application을 Docker Image로 만들어서 docker hub에 push하는 과정이다.
+
+![](https://i.imgur.com/4zO4tno.png)
+
+스프링부트 프로젝트 루트 경로에 `Dockerfile` 이라는 파일을 생성해서 아래와 같은 내용을 입력하자.
+
+```
+FROM docker.io/library/openjdk:11  
+ARG JAR_FILE=./build/libs/muscle-0.0.1-SNAPSHOT.jar  
+COPY ${JAR_FILE} app.jar  
+ENTRYPOINT ["java", "-jar", "/app.jar", "--spring.profiles.active=prod"]
+
+```
+
+`FROM openjdk:11`  
+: base 이미지를 openjdk:11로 설정한다. 즉, Docker에 올릴 때 jdk11 버전을 이용해서 올리겠다고 선언해주는 커맨드이다.
+
+`ARG JAR_FILE=./build/libs/{빌드한 jar 파일명}.jar`  
+: JAR 파일의 위치를 환경변수의 형태로 선언해주는 커맨드이다. 프로젝트를 빌드하게 되면 build/libs/{프로젝트명}-0.0.1-SNAPSHOT.jar 형태로 파일이 생성된다.
+
+`COPY ${JAR_FILE} app.jar`  
+: 프로젝트 빌드 파일을 컨테이너의 루트 디렉토리의 app.jar 라는 이름으로 복사하는 커맨드이다.
+
+`ENTRYPOINT ["java","-jar","/app.jar", "--spring.profiles.active=prod"]`  
+: 컨테이너에서 java -jar /app.jar를 실행하는 커맨드이다. 이때 --spring.profiles.active=prod 라는 옵션은 properties 파일에서 profiles를 활성화하는 경우 붙여준다.
+
+## docker-compose 설정하기
+
+## 2-1. docker-compose 설치하기
+
+[지난번](https://velog.io/@jmjmjmz732002/Github-Action-Docker-EC2-Nginx-%ED%99%9C%EC%9A%A9%ED%95%9C-Springboot-CICD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-4-AWS-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%97%90-Docker-docker-compose-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0) EC2 인스턴스에서 docker-compose를 설치했으니 스킵하도록 하겠다.
+
+## 2-2. docker-compose.yml 작성하기
+
+docker-compose 파일을 작성하여 EC2 서버에 배포할 것이다. 프로젝트 루트 경로에 docker-compose.yml 파일을 생성하자.
+
+> docker-compose.yml을 작성하여 각각 독립된 컨테이너의 실행 정의를 실시한다.
+
+```yml
+version: "3" # 버전 지정
+
+services: # 컨테이너 설정
+  database: 
+    container_name: mysql # 컨테이너 이름
+    image: mysql/mysql-server:latest # 컨테이너에서 사용하는 base image 지정
+    environment: # 컨테이너 안의 환경변수 설정
+      MYSQL_DATABASE: {database name}
+      MYSQL_USER: {database user}
+      MYSQL_PASSWORD: {database pwd}
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: rootpwd
+    command: # 명령어 설정
+      - --default-authentication-plugin=mysql_native_password
+    ports: # 접근 포트 설정 
+      - 3305:3306 # Host:Container
+    networks:
+      - db_network
+    restart: always  # 컨테이너 실행 시 재시작
+  mytamla:
+    build: .
+    expose:
+      - 8080
+    depends_on:
+      - database
+
+networks: # 커스텀 네트워크 추가
+  db_network: # 네트워크 이름
+    driver: bridge
+```
+
+방금 작성한 `Dockerfile`로 스프링부트 컨테이너를 실행하고, mysql은 기존 이미지를 사용해 컨테이너 실행을 할 것이다.
+
+mysql config를 따로 빼서 볼륨 설정을 해주기도 하는데 필자는 생략했다.
+
+> 기본적으로 Docker Compose는 하나의 디폴트 네트워크에 모든 컨테이너를 연결한다. 디폴트 네트워크의 이름은 docker-compose.yml가 위치한 디렉토리 이름 뒤에 _default가 붙는다.
+
+커스텀 네트워크  
+컨테이너에 올리는 mysql은 호스트 컴퓨터에서 접속할 때는 3305포트를 사용해야 하고, 같은 디폴트 네트워크 내의 다른 컨테이너에서 접속할 때는 3306 포트를 사용해야 한다.
+
+이렇게 해주면 database 서비스는 디폴트 네트워크 뿐만 아니라 db_network 네트워크에도 연결되게 된다.
+
+여러가지 네트워크 드라이버가 있는데
+
+> 1. bridge : 하나의 호스트 컴퓨터에서 여러 개의 컨테이너들이 통신할 수 있게 한다.
+> 2. host : 호스트 컴퓨터와 동일한 네트워크에서 여러 개의 컨테이너들이 통신할 수 있게 한다.
+> 3. overlay : 여러 호스트 컴퓨터(다른 네트워크)에서 여러 개의 컨테이너들이 통신할 수 있게 한다.
+
+
+## Github Action CI/CD 작성하기
+
+##  CI/CD
+
+> **CI(Continuous Integration)**는 지속적 통합을 나타내는 용어이다.
+> 
+> 어플리케이션의 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트되어 공유 레포지토리에 통합되는 것을 의미한다.
+> 
+> 클래스와 기능에서부터 전체 애플리케이션을 구성하는 서로 다른 모듈에 이르기까지 모든 것에 대한 테스트를 수행할 수 있으며, 코드를 병합하는 과정에서 충돌이 생긴다면 CI를 통해 버그를 수정할 수 있다.
+> 
+> 이로 인해 개발하는 코드의 품질을 좀 더 향상시킬 수 있으며, 새로운 업데이트의 검증 및 릴리즈의 시간을 단축시킬 수 있다.
+> 
+> **CD(Continuous Deliver, Countinuous Deplotment)**는 지속적인 배포를 나타내는 용어이다.  
+> (* 보통은 전자인 지속적 제공의 의미가 강하다.)
+
+![](https://i.imgur.com/hRwyLdS.png)
+
+## 왜 CI/CD를 구축하는걸까?
+
+어플리케이션 개발 단계를 자동화하면 보다 짧은 주기로 고객에게 제공할 수 있다. 자동화가 이루어지지 않는다면 모든 빌드와 배포 작업을 수동으로 조작해야 하는데 사소한 수정 사항 하나에도 모든 과정을 거쳐야하므로 매우 불편하고 시간 소요가 많다.
+
+CI/CD 구축을 지원하는 툴은 시중에 많다.
+
+- Jenkins
+- Travis CI
+- Circle CI
+- Google Cloud Build
+- AWS CodeBuild
+- Github Actions
+
+각 툴은 요금체계부터 특성이 모두 다르므로 프로젝트에 적합한 것을 선택하면 된다.
+
+### ✅ Github Actions
+
+Github Actions는 소프트웨어 개발 라이프사이클 안에서 PR, push 등의 이벤트 발생에 따라 자동화된 작업을 진행할 수 있게 해주는 기능이다.  
+CI/CD나 Testing, Cron Job 등 작업을 수행할 수 있다.
+
+### ✅ Github Actions의 구성 요소
+
+Github Actions를 활용하기 위해 구성 요소를 먼저 파악해보자.
+
+#### Workflow
+
+- Workflow란 레포지토리에 추가할 수 있는 일련의 자동화된 커맨드 집합이다.
+- 하나 이상의 Job으로 구성되어 있고, PR이나 push과 같은 이벤트에 의해 실행될 수도 있고 특정 시간대에 실행될 수 있다.
+- 빌드, 테스트, 배포 등 각각의 역할에 맞는 Workflow를 추가할 수 있고, `.github/workflows` 디렉토리에 YAML 형태를 저장합니다.
+
+#### Event
+
+- Event란 Workflow를 실행시키는 push, PR, commit 등의 특정 행동을 의미한다.
+
+#### Job
+
+- Job이란 동일한 Runner에서 실행되는 여러 Step의 집합을 의미한다.
+- 기본적으로 하나의 Workflow 내의 여러 Job은 독립적으로 실행되지만, 필요에 따라 의존 관계를 설정하여 순서를 지정해줄 수 있다.
+
+#### Step
+
+- Step이란 커맨드를 실행할 수 있는 각각의 Task를 의미한다. Shell 커맨드가 될 수도 있고, 하나의 Action이 될 수도 있다.
+- 하나의 Job 내에서 각각의 Step은 다양한 Task로 인해 생성된 데이터를 공유할 수 있다.
+
+#### Action
+
+- Action이란 Job을 만들기 위해 Step을 결합한 독립적인 커맨드로, 재사용이 가능한 Workflow의 가장 작은 단위의 블럭이다.
+- 직접 만든 Action을 사용하거나 Gihub Community에 의해 생성된 Action을 불러와 사용할 수 있다.
+
+#### Runner
+
+- Runner란 Github Actions Workflow 내에 있는 Job을 실행시키기 위한 어플리케이션이다.
+- Runner Application은 Github에서 호스팅하는 가상 환경 또는 직접 호스팅하는 가상 환경에서 실행 가능하며, Github에서 호스팅하는 가상 인스턴스의 경우에는 메모리 및 용량 제한이 존재한다.
+
+## CI Workflow 생성하기
+
+필자는 팀원들과 Git을 공유하며 사용하는 환경이므로, 기능 추가와 같이 코드가 수정되고 난 후 `feat` -> `main` PR에서 CI가 동작하도록 구성하려고 한다.  
+(* 혼자 백엔드를 맡아서 feat, main으로만 브랜치를 구성했었다.)
+
+CI 작업을 수행할 프로젝트의 레포지토리의 Actions 탭을 접속한다.
+
+> 프로젝트 루트 `.github/workflows` 디렉토리 내에 `.yml` 파일을생성해도 된다.
+
+![](https://i.imgur.com/QSgX5q7.png)
+
+다양한 용도별 템플릿을 제공해주고 있다. 지금은 가장 기본적인 템플릿을 사용해볼 것이다. 상단에 `set up a workflow yourself` 를 클릭한다.
+
+![](https://i.imgur.com/Bry4lCd.png)
+
+
+```yaml
+# Workflow 이름은 구별이 가능할 정도로 자유롭게 적어주어도 된다. 
+# 필수 옵션은 아니다.
+name: Java CI with Gradle
+
+# main 브랜치에 PR 이벤트가 발생하면 Workflow가 실행된다.
+# 브랜치 구분이 없으면 on: [pull_request]로 해주어도 된다.
+on:
+  pull_request:
+    branches: [ "main" ]
+
+# 테스트 결과 작성을 위해 쓰기권한 추가
+permissions: write-all
+
+
+# 해당 Workflow의 Job 목록
+jobs:
+	# Job 이름으로, build 라는 이름으로 Job이 표시된다.
+  build:
+  	# Runner가 실행되는 환경을 정의
+    runs-on: ubuntu-latest
+
+	# build Job 내의 step 목록
+    steps:
+      # uses 키워드를 통해 Action을 불러올 수 있다.
+      # 해당 레포지토리로 check-out하여 레포지토리에 접근할 수 있는 Acion 불러오기
+    - uses: actions/checkout@v3
+    # 여기서 실행되는 커맨드에 대한 설명으로, Workflow에 표시된다. 
+    # jdk 세팅
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        
+      # gradle 캐싱
+    - name: Gradle Caching
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+      
+    ### CI
+    #gradlew 권한 추가
+    - name: Grant Execute Permission For Gradlew
+      run: chmod +x gradlew
+    
+    #test를 제외한 프로젝트 빌드
+    - name: Build With Gradle
+      run: ./gradlew build -x test
+
+    #test를 위한 mysql설정
+    - name: Start MySQL
+      uses: samin/mysql-action@v1.3
+      with:
+        host port: 3305
+        container port: 3305
+        mysql database: '{database name}'
+        mysql user: '{database user}'
+        mysql password: '{database pwd}'
+
+    #테스트를 위한 test properties 설정
+    - name: Make application-test.properties
+      run: |
+        cd ./src/test/resources
+        touch ./application.properties
+        echo "${{ secrets.PROPERTIES_TEST }}" > ./application.properties
+      shell: bash
+
+    #test코드 빌드
+    - name: Build With Test
+      run: ./gradlew test
+
+    #테스트 결과 파일 생성
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: ${{ always() }}
+      with:
+        files: build/test-results/**/*.xml
+```
+
+## CD workflow 작성하기
+
+CI/CD를 분리해 작성 한다.
+
+```yaml
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      #jdk 세팅
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Gradle Caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('/.gradle', '/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # CD
+      - name: Make application-prod.yml
+        run: |
+          cd ./src/main/resources
+          touch ./application-prod.yml
+          echo "${{ secrets.YML_PROD }}" > ./application-prod.yml
+        shell: bash
+
+      - name: Create 'generated-snippets' Directory
+        run: mkdir -p build/generated-snippets
+
+      - name: Build With Gradle
+        run: ./gradlew build -x test
+
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      #도커 빌드 & 이미지 push
+      - name: Docker build & Push
+        run: |
+          docker login -u ${{ secrets.DOCKER_ID }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker buildx create --use
+          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.DOCKER_REPO }} --push .
+
+      #docker-compose 파일을 ec2 서버에 배포
+      - name: Deploy to Prod
+        uses: appleboy/ssh-action@master
+        id: deploy-prod
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          envs: GITHUB_SHA
+          script: |
+            docker stop mcpark
+            docker rm mcpark
+            sudo docker pull ${{ secrets.DOCKER_REPO }}
+            docker run -d --name mcpark -p 8080:8080 ${{ secrets.DOCKER_REPO }}
+            docker rmi -f $(docker images -f "dangling=true" -q)
+```
+
+CD 과정을 통해 ARM 아키텍처에 맞게 이미지를 빌드한다.
+
+## Secrets 등록하기
+
+workflow 내의 `${{ ~~ }}`는 외부에 공개되어서는 안되는 민감 정보를 시크릿으로 저장해 놓은 것이다.
+
+레포지토리 Settings > Secrets > Actions 에서 등록해주면 된다.
+
+![](https://i.imgur.com/K6zIqvI.png)
+
+- DOCKER_ID : Docker-hub 이메일
+- DOCKER_PASSWORD : Docker-hub 비밀번호
+- DOCKER-REPO : Docke-hub Repository 이름
+- EC2_HOST : EC2 public IP address
+- EC2_PRIVATE_KEY : EC2 key pair pem 키 값을 복사한 내용 (*---BEGIN 어쩌구부터 끝까지 복붙해넣어야 한다)
+- EC2_USERNAME : EC2 인스턴스가 ubuntu라면 ubuntu, linux라면 ec2-user
+- PROPERTIES_xxx : properties 파일 내용
