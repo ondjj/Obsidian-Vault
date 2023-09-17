@@ -136,64 +136,279 @@ sticker: lucide//factory
 
 ![](https://i.imgur.com/0GbPzjY.png)
 
-#### Shape.java
+## **buttons:** 첫 번째 제품의 계층구조
+
+#### **buttons/Button**.java
 
 ``` java
-
+package com.design.pattern.creational.abstractfactory.example.buttons;  
+  
+  
+/**  
+ * 추상 공장에서는 여러 제품군을 보유하고 있다고 가정합니다,  
+ * 별도의 클래스 계층 구조(Button/Checkbox)로 구성되어 있습니다.  
+ * 모든 제품의 같은 패밀리는 공통 인터페이스를 가지고 있습니다.  
+ * 버튼 제품군의 공통 인터페이스입니다.  
+ */
+ public interface Button {  
+    void paint();  
+}
 ```
 
-#### Circle.java
+#### **buttons/MacOSButton**.java
 
 ``` java
-
+package com.design.pattern.creational.abstractfactory.example.buttons;  
+  
+/**  
+ * 모든 제품군은 동일한 종류(MacOS/Windows)를 가지고 있습니다.  
+ * MacOS 모델 버튼입니다.  
+ */
+ public class MacOSButton implements Button{  
+    @Override  
+    public void paint() {  
+        System.out.println("You have created MacOSButton");  
+    }  
+}
 ```
 
-#### Rectangle.java
+#### **buttons/WindowsButton**.java
 
 ``` java
-
+package com.design.pattern.creational.abstractfactory.example.buttons;  
+  
+/**  
+ * 모든 제품군은 동일한 종류(MacOS/Windows)를 가지고 있습니다.  
+   버튼의 또 다른 모델입니다.  
+ */
+ public class WindowsButton implements Button{  
+    @Override  
+    public void paint() {  
+        System.out.println("You have created WindowsButton.");  
+    }  
+}
 ```
 
-#### Demo.java
+## **checkboxes:** 두 번째 제품의 계층구조
+#### **checkboxes/Checkbox**.java
 
 ``` java
-
+package com.design.pattern.creational.abstractfactory.example.checkboxes;  
+  
+/**  
+ * 체크박스는 두번째 제품군입니다.  
+ * 버튼과 동일한 모델을 가지고 있습니다.  
+ */
+ public interface Checkbox {  
+  
+    void paint();  
+}
 ```
 
-#### 실행 결과
-
-
-
-#### BundledShapeCache.java
+#### **checkboxes/MacOSCheckbox**.java
 
 ```java
-
+package com.design.pattern.creational.abstractfactory.example.checkboxes;  
+  
+/**  
+ * 모든 제품군은 동일한 종류(MacOS/Windows)를 가지고 있습니다.  
+ * 체크박스의 모델입니다.  
+ */
+ public class MacOSCheckbox implements Checkbox{  
+    @Override  
+    public void paint() {  
+        System.out.println("You have created MacOSCheckbox.");  
+    }  
+}
 ```
 
-#### Demo.java
+#### **checkboxes/WindowsCheckbox**.java
+
+```java
+package com.design.pattern.creational.abstractfactory.example.checkboxes;  
+  
+/**  
+ * All products families have the same varieties (MacOS/Windows). *
+ * This is another variant of a checkbox. */
+ public class WindowsCheckbox implements Checkbox{  
+    @Override  
+    public void paint() {  
+        System.out.println("You have created WindowCheckbox.");  
+    }  
+}
+```
+
+## **factories**
+
+### **factories/GUIFactory.java:** 추상 팩토리
+```java
+package com.design.pattern.creational.abstractfactory.example.factories;  
+  
+import com.design.pattern.creational.abstractfactory.example.buttons.Button;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.Checkbox;  
+  
+/**  
+ * Abstract factory knows about all (abstract) product types. */
+public interface GUIFactory {  
+    Button createButton();  
+    Checkbox createCheckbox();  
+}
+```
+
+### **factories/MacOSFactory.java:** 구상 팩토리 (맥)
+```java
+package com.design.pattern.creational.abstractfactory.example.factories;  
+  
+import com.design.pattern.creational.abstractfactory.example.buttons.Button;  
+import com.design.pattern.creational.abstractfactory.example.buttons.MacOSButton;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.Checkbox;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.MacOSCheckbox;  
+  
+/**  
+ * 각 구현 팩토리는 추상 팩토리를 확장하고 생산을 담당합니다.  
+ * 단일 모델 제품  
+ */  
+public class MacOSFactory implements GUIFactory{  
+    @Override  
+    public Button createButton() {  
+        return new MacOSButton();  
+    }  
+  
+    @Override  
+    public Checkbox createCheckbox() {  
+        return new MacOSCheckbox();  
+    }  
+}
+```
+
+### **factories/WindowsFactory.java:** 구상 팩토리 (윈도우)
+```java
+package com.design.pattern.creational.abstractfactory.example.factories;  
+  
+import com.design.pattern.creational.abstractfactory.example.buttons.Button;  
+import com.design.pattern.creational.abstractfactory.example.buttons.WindowsButton;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.Checkbox;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.WindowsCheckbox;  
+  
+/**  
+ * 각 구현 팩토리는 추상 팩토리를 확장하고 생산을 담당합니다.  
+ * 단일 모델 제품  
+ */  
+public class WindowsFactory implements GUIFactory{  
+    @Override  
+    public Button createButton() {  
+        return new WindowsButton();  
+    }  
+  
+    @Override  
+    public Checkbox createCheckbox() {  
+        return new WindowsCheckbox();  
+    }  
+}
+```
+
+
+## app
+
+### app/Application.java : 클라이언트 코드
 
 ``` java
+package com.design.pattern.creational.abstractfactory.example.app;  
+  
+import com.design.pattern.creational.abstractfactory.example.buttons.Button;  
+import com.design.pattern.creational.abstractfactory.example.checkboxes.Checkbox;  
+import com.design.pattern.creational.abstractfactory.example.factories.GUIFactory;  
+  
+/**  
+ * 클라이언트는 어떤 구현 팩토리를 사용하든 상관하지 않습니다.  
+ * 추상적인 인터페이스를 통한 공장과 제품.  
+ */
+ public class Application {  
+  
+    private Button button;  
+    private Checkbox checkbox;  
+  
+    public Application(GUIFactory factory) {  
+        button = factory.createButton();  
+        checkbox = factory.createCheckbox();  
+    }  
+  
+    public void paint() {  
+        button.paint();  
+        checkbox.paint();  
+    }  
+}
+```
+
+## Demo.java : 앱 설정 및 실행
+
+``` java
+package com.design.pattern.creational.abstractfactory.example;  
+  
+  
+import com.design.pattern.creational.abstractfactory.example.app.Application;  
+import com.design.pattern.creational.abstractfactory.example.factories.GUIFactory;  
+import com.design.pattern.creational.abstractfactory.example.factories.MacOSFactory;  
+import com.design.pattern.creational.abstractfactory.example.factories.WindowsFactory;  
+  
+/**  
+ * Demo class. Everything comes together here. 
+ */
+public class Demo {   
+    /**  
+     * 응용 프로그램이 팩토리 유형을 선택하고 실행 시간 내에 생성합니다(보통 초기화 단계에서)  
+     * 구성 또는 환경 변수에 따라 달라질 수 있습니다.  
+     */  
+    private static Application configureApplication() {  
+        Application app;  
+        GUIFactory factory;  
+        String osName = System.getProperty("os.name").toLowerCase();  
+        if (osName.contains("mac")) {  
+            factory = new MacOSFactory();  
+        } else {  
+            factory = new WindowsFactory();  
+        }  
+        app = new Application(factory);  
+        return app;  
+    }  
+  
+    public static void main(String[] args) {  
+        Application app = configureApplication();  
+        app.paint();  
+    }  
+}
+```
+#### 실행 결과
+
+```java
+Starting Gradle Daemon...
+Gradle Daemon started in 1 s 739 ms
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+
+> Task :Demo.main()
+
+You have created MacOSButton
+You have created MacOSCheckbox.
 ```
 
 
-### 실행 결과
+![](https://i.imgur.com/HZkw8iB.png)
 
+# 다른 패턴과의 관계
 
+> 많은 디자인은 복잡성이 낮고 자식 클래스를 통해 더 많은 커스터마이징이 가능한 팩토리 메서드로 시작해 더 유연하면서도 더 복잡한 추상 팩토리, 프로토타입 또는 빌더 패턴으로 발전해 나간다.
 
+> 빌더는 복잡한 객체들을 단계별로 생성하는데 중점을 두고, 추상 팩토리는 관련된 객체들의 패밀리들을 생성하는데 중접을 둔다.
+> 추상 팩토리는 제품을 즉시 반환하지만 빌더는 제품을 가져오기 전에 사용자가 몇 가지 추가 생성 단계들을 실행할 수 있도록 한다. 
 
-# 디자인 패턴 비교
+> 추상 팩토리 클래스는 팩토리 메서드의 집합을 기반으로 하는 경우가 많지만, 프로토타입을 사용하여 추상 팩토리의 구현 클래스의 생성 메서드를 구현할 수도 있다.
 
-> 
->
-  
+> 추상 팩토리는 하위 시스템 객체들이 클라이언트 코드에서 생성되는 방식만 숨기고 싶을 때 퍼사드 대신 사용할 수 있다.
 
-> 
-
-> 
-> 
->
-
->
+> 추상 팩토리를 브리지와 함께 사용할 수 있다. 이 조합은 브리지에 의해 정의된 어떤 추상화들이 특정 구현에 의해 작동할 수 있을 때 유용하다.
+> 이런 경우 추상 팩토리는 이러한 관계들을 캡슐화하고 클라이언트 코드에서부터 복잡성을 숨길 수 있다.
 
 
 # 정리
