@@ -276,49 +276,471 @@ public static void main(String[] args) {
 **식별법**
 빌더 패턴은 하나의 생성 메서드와 결과 객체를 설정하기 위한 여러 메서드가 있는 클래스가 있고, 빌더 메서드는 체이닝 연결을 지원한다.
 
-#### Shape.java
+## Package : builders
+#### Builder.java
 
 ``` java
-
+package com.design.pattern.creational.builder.example.builders;  
+  
+import com.design.pattern.creational.builder.example.cars.CarType;  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * Builder 인터페이스는 제품을 구성하는 모든 가능한 방법을 정의합니다.  
+ */
+ public interface Builder {  
+    void setCarType(CarType type);  
+    void setSeats(int seats);  
+    void setEngine(Engine engine);  
+    void setTransmission(Transmission transmission);  
+    void setTripComputer(TripComputer tripComputer);  
+    void setGPSNavigator(GPSNavigator gpsNavigator);  
+}
 ```
 
-#### Circle.java
+#### CarBuilder.java
 
 ``` java
-
+package com.design.pattern.creational.builder.example.builders;  
+  
+import com.design.pattern.creational.builder.example.cars.Car;  
+import com.design.pattern.creational.builder.example.cars.CarType;  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * 구현 빌더는 공통 인터페이스에 정의된 단계를 구현합니다.  
+ */  
+public class CarBuilder implements Builder{  
+    private CarType type;  
+    private int seats;  
+    private Engine engine;  
+    private Transmission transmission;  
+    private TripComputer tripComputer;  
+    private GPSNavigator gpsNavigator;  
+  
+    @Override  
+    public void setCarType(final CarType type) {  
+        this.type = type;  
+    }  
+  
+    @Override  
+    public void setSeats(final int seats) {  
+        this.seats = seats;  
+    }  
+  
+    @Override  
+    public void setEngine(final Engine engine) {  
+        this.engine = engine;  
+    }  
+  
+    @Override  
+    public void setTransmission(final Transmission transmission) {  
+        this.transmission = transmission;  
+    }  
+  
+    @Override  
+    public void setTripComputer(final TripComputer tripComputer) {  
+        this.tripComputer = tripComputer;  
+    }  
+  
+    @Override  
+    public void setGPSNavigator(final GPSNavigator gpsNavigator) {  
+        this.gpsNavigator = gpsNavigator;  
+    }  
+  
+    public Car getResult() {  
+        return new Car(type, seats, engine, transmission, tripComputer, gpsNavigator);  
+    }  
+}
 ```
 
-#### Rectangle.java
+#### CarManualBuilder.java
 
 ``` java
-
+package com.design.pattern.creational.builder.example.builders;  
+  
+  
+import com.design.pattern.creational.builder.example.cars.CarType;  
+import com.design.pattern.creational.builder.example.cars.Manual;  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * 다른 생성 패턴과 달리 Builder는 관련 없는 제품을 제작할 수 있고, 공통적인 인터페이스가 없다.  
+ */
+ public class CarManualBuilder implements Builder{  
+    private CarType type;  
+    private int seats;  
+    private Engine engine;  
+    private Transmission transmission;  
+    private TripComputer tripComputer;  
+    private GPSNavigator gpsNavigator;  
+  
+    @Override  
+    public void setCarType(final CarType type) {  
+        this.type = type;  
+    }  
+  
+    @Override  
+    public void setSeats(final int seats) {  
+        this.seats = seats;  
+    }  
+  
+    @Override  
+    public void setEngine(final Engine engine) {  
+        this.engine = engine;  
+    }  
+  
+    @Override  
+    public void setTransmission(final Transmission transmission) {  
+        this.transmission = transmission;  
+    }  
+  
+    @Override  
+    public void setTripComputer(final TripComputer tripComputer) {  
+        this.tripComputer = tripComputer;  
+    }  
+  
+    @Override  
+    public void setGPSNavigator(final GPSNavigator gpsNavigator) {  
+        this.gpsNavigator = gpsNavigator;  
+    }  
+  
+    public Manual getResult() {  
+        return new Manual(type, seats, engine, transmission, tripComputer, gpsNavigator);  
+    }  
+}
 ```
 
-#### Demo.java
+## Package : cars
+#### Car.java
 
 ``` java
+package com.design.pattern.creational.builder.example.cars;  
+  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * Car is a product class. */
+public class Car {  
+    private final CarType carType;  
+    private final int seats;  
+    private final Engine engine;  
+    private final Transmission transmission;  
+    private final TripComputer tripComputer;  
+    private GPSNavigator gpsNavigator;  
+    private double fuel = 0;  
+  
+    public Car(CarType carType, int seats, Engine engine, Transmission transmission,  
+               TripComputer tripComputer, GPSNavigator gpsNavigator) {  
+        this.carType = carType;  
+        this.seats = seats;  
+        this.engine = engine;  
+        this.transmission = transmission;  
+        this.tripComputer = tripComputer;  
+        if (this.tripComputer != null) {  
+            this.tripComputer.setCar(this);  
+        }  
+        this.gpsNavigator = gpsNavigator;  
+    }  
+  
+    public CarType getCarType() {  
+        return carType;  
+    }  
+  
+    public double getFuel() {  
+        return fuel;  
+    }  
+  
+    public void setFuel(double fuel) {  
+        this.fuel = fuel;  
+    }  
+  
+    public int getSeats() {  
+        return seats;  
+    }  
+  
+    public Engine getEngine() {  
+        return engine;  
+    }  
+  
+    public Transmission getTransmission() {  
+        return transmission;  
+    }  
+  
+    public TripComputer getTripComputer() {  
+        return tripComputer;  
+    }  
+  
+    public GPSNavigator getGpsNavigator() {  
+        return gpsNavigator;  
+    }  
+}
+```
 
+#### CarType
+```java
+package com.design.pattern.creational.builder.example.cars;  
+  
+public enum CarType {  
+    CITY_CAR, SPORTS_CAR, SUV  
+}
+```
+
+#### Manual
+```java
+package com.design.pattern.creational.builder.example.cars;  
+  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * 카 매뉴얼은 또 다른 제품입니다. 참고로 카와 조상이 같지 않습니다. 관련이 없습니다.  
+ */
+public class Manual {  
+    private final CarType carType;  
+    private final int seats;  
+    private final Engine engine;  
+    private final Transmission transmission;  
+    private final TripComputer tripComputer;  
+    private final GPSNavigator gpsNavigator;  
+  
+    public Manual(CarType carType, int seats, Engine engine, Transmission transmission,  
+                  TripComputer tripComputer, GPSNavigator gpsNavigator) {  
+        this.carType = carType;  
+        this.seats = seats;  
+        this.engine = engine;  
+        this.transmission = transmission;  
+        this.tripComputer = tripComputer;  
+        this.gpsNavigator = gpsNavigator;  
+    }  
+  
+    public String print() {  
+        String info = "";  
+        info += "Type of car: " + carType + "\n";  
+        info += "Count of seats: " + seats + "\n";  
+        info += "Engine: volume - " + engine.getVolume() + "; mileage - " + engine.getMileage() + "\n";  
+        info += "Transmission: " + transmission + "\n";  
+        if (this.tripComputer != null) {  
+            info += "Trip Computer: Functional" + "\n";  
+        } else {  
+            info += "Trip Computer: N/A" + "\n";  
+        }  
+        if (this.gpsNavigator != null) {  
+            info += "GPS Navigator: Functional" + "\n";  
+        } else {  
+            info += "GPS Navigator: N/A" + "\n";  
+        }  
+        return info;  
+    }  
+}
+```
+
+### Package : components
+#### Engine
+```java
+package com.design.pattern.creational.builder.example.components;  
+  
+/**  
+ * Just another feature of a car. */
+public class Engine {  
+    private final double volume;  
+    private double mileage;  
+    private boolean started;  
+  
+    public Engine(double volume, double mileage) {  
+        this.volume = volume;  
+        this.mileage = mileage;  
+    }  
+  
+    public void on() {  
+        started = true;  
+    }  
+  
+    public void off() {  
+        started = false;  
+    }  
+  
+    public boolean isStarted() {  
+        return started;  
+    }  
+  
+    public void go(double mileage) {  
+        if (started) {  
+            this.mileage += mileage;  
+        } else {  
+            System.err.println("Cannot go(), you must start engine first!");  
+        }  
+    }  
+  
+    public double getVolume() {  
+        return volume;  
+    }  
+  
+    public double getMileage() {  
+        return mileage;  
+    }  
+}
+```
+
+#### GPSNavigator
+```java
+package com.design.pattern.creational.builder.example.components;  
+  
+public class GPSNavigator {  
+    private String route;  
+  
+    public GPSNavigator() {  
+        this.route = "221b, Baker Street, London  to Scotland Yard, 8-10 Broadway, London";  
+    }  
+  
+    public GPSNavigator(String manualRoute) {  
+        this.route = manualRoute;  
+    }  
+  
+    public String getRoute() {  
+        return route;  
+    }  
+}
+```
+
+#### Transmission
+```java
+package com.design.pattern.creational.builder.example.components;  
+  
+/**  
+ * Just another feature of a car. */
+public enum Transmission {  
+    SINGLE_SPEED, MANUAL, AUTOMATIC, SEMI_AUTOMATIC  
+}
+```
+
+#### TripComputer
+```java
+package com.design.pattern.creational.builder.example.components;  
+  
+import com.design.pattern.creational.builder.example.cars.Car;  
+  
+/**  
+ * Just another feature of a car. */public class TripComputer {  
+    private Car car;  
+  
+    public void setCar(Car car) {  
+        this.car = car;  
+    }  
+  
+    public void showFuelLevel() {  
+        System.out.println("Fuel level: " + car.getFuel());  
+    }  
+  
+    public void showStatus() {  
+        if (this.car.getEngine().isStarted()) {  
+            System.out.println("Car is started");  
+        } else {  
+            System.out.println("Car isn't started");  
+        }  
+    }  
+}
+```
+
+### Package : director
+
+#### Director
+```java
+package com.design.pattern.creational.builder.example.director;  
+  
+import com.design.pattern.creational.builder.example.builders.Builder;  
+import com.design.pattern.creational.builder.example.cars.CarType;  
+import com.design.pattern.creational.builder.example.components.Engine;  
+import com.design.pattern.creational.builder.example.components.GPSNavigator;  
+import com.design.pattern.creational.builder.example.components.Transmission;  
+import com.design.pattern.creational.builder.example.components.TripComputer;  
+  
+/**  
+ * 디렉터는 빌딩 단계의 순서를 정의합니다. 빌딩 객체와 함께 작동합니다  
+ * common Builder 인터페이스를 통해서 어떤 제품을 만들고 있는지 알 수 없습니다.  
+ */public class Director {  
+  
+    public void constructSportsCar(Builder builder) {  
+        builder.setCarType(CarType.SPORTS_CAR);  
+        builder.setSeats(2);  
+        builder.setEngine(new Engine(3.0, 0));  
+        builder.setTransmission(Transmission.SEMI_AUTOMATIC);  
+        builder.setTripComputer(new TripComputer());  
+        builder.setGPSNavigator(new GPSNavigator());  
+    }  
+  
+    public void constructCityCar(Builder builder) {  
+        builder.setCarType(CarType.CITY_CAR);  
+        builder.setSeats(2);  
+        builder.setEngine(new Engine(1.2, 0));  
+        builder.setTransmission(Transmission.AUTOMATIC);  
+        builder.setTripComputer(new TripComputer());  
+        builder.setGPSNavigator(new GPSNavigator());  
+    }  
+  
+    public void constructSUV(Builder builder) {  
+        builder.setCarType(CarType.SUV);  
+        builder.setSeats(4);  
+        builder.setEngine(new Engine(2.5, 0));  
+        builder.setTransmission(Transmission.MANUAL);  
+        builder.setGPSNavigator(new GPSNavigator());  
+    }  
+}
+```
+
+### Demo.java
+```java
+public class Demo {  
+    public static void main(String[] args) {  
+        Director director = new Director();  
+  
+        // Director는 클라이언트로부터 구현 빌더 객체를 가져옵니다  
+        // (애플리케이션 코드) 애플리케이션이 특정 제품을 얻기 위해 사용할 빌더입니다.  
+        CarBuilder builder = new CarBuilder();  
+        director.constructSportsCar(builder);
+        
+        // 최종 제품은 종종 빌더 오브젝트에서 검색됩니다.  
+		// Director는 구현 빌더와 제품에 의존하지 않고 인지하고 있지 않습니다.  
+		Car car = builder.getResult();  
+		System.out.println("Car built:\n" + car.getCarType());
+		        
+		// Director may know several building recipes.  
+        director.constructSportsCar(manualBuilder);  
+        Manual carManual = manualBuilder.getResult();  
+        System.out.println("\nCar manual built:\n" + carManual.print());  
+    }  
+}
 ```
 
 #### 실행 결과
 
-
-
-#### BundledShapeCache.java
-
-```java
-
-```
-
-#### Demo.java
-
 ``` java
+> Task :Demo.main()
+Car built:
+SPORTS_CAR
+
+Car manual built:
+Type of car: SPORTS_CAR
+Count of seats: 2
+Engine: volume - 3.0; mileage - 0.0
+Transmission: SEMI_AUTOMATIC
+Trip Computer: Functional
+GPS Navigator: Functional
 ```
-
-
-### 실행 결과
-
-
 
 
 # 디자인 패턴 비교
