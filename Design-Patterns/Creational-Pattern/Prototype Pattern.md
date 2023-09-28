@@ -4,7 +4,14 @@ tags:
   - design-patterns
   - creational
   - pattern
-Prototype-Pattern:
+tistoryBlogName: ondj
+tistoryTitle: Prototype Pattern
+tistoryTags: design-patterns,creational,pattern
+tistoryVisibility: "0"
+tistoryCategory: "1096109"
+tistorySkipModal: true
+tistoryPostId: "121"
+tistoryPostUrl: https://ondj.tistory.com/121
 ---
 
 

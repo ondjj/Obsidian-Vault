@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Micro Service
+tistoryTags: MSA,Micro,Architecture
+tistoryVisibility: "0"
+tistoryCategory: "1096106"
+tistorySkipModal: true
+tistoryPostId: "123"
+tistoryPostUrl: https://ondj.tistory.com/123
+---
 > 마이크로서비스는 소프트웨어 개발 패러다임의 하나로, 애플리케이션을 독립적인 서비스로 분해하는 아키텍처 스타일을 말한다.
 >
 >독립적으로 존재하기 때문에 자체적으로 실행 가능하며, 데이터 베이스, 저장소 및 네트워크를 포함한 필요한 모든 것을 갖추고 있다.

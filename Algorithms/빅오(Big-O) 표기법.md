@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: 빅오(Big-O) 표기법
+tistoryTags: 빅오, 빅오 표기법, BigO
+tistoryVisibility: "0"
+tistoryCategory: "907041"
+tistorySkipModal: true
+tistoryPostId: "125"
+tistoryPostUrl: https://ondj.tistory.com/125
+---
 # Big-O
 `Big-O`는 알고리즘의 성능을 수학적으로 표기해주는 표기법으로 시간과 공간 복잡도를 표현할 수 있다. `Big-O` 표기법은 알고리즘의 실제 러닝 타임을 표시하기보다 데이터나 사용자의 증가율에 따른 알고리즘의 성능을 예측하는게 목표이기 때문에 상수와 같은 숫자는 모두 1이 된다.
 

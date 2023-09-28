@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Graph 검색 구현
+tistoryTags: graph
+tistoryVisibility: "0"
+tistoryCategory: "1096118"
+tistorySkipModal: true
+tistoryPostId: "126"
+tistoryPostUrl: https://ondj.tistory.com/126
+---
 그래프를 검색하는 방법은 대표적으로 `깊이 우선 검색(Depth-First Search, DFS)`,
 `넓이 우선 검색(Breadth-First Search, BFS)`가 있다.
 

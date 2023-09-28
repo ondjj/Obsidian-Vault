@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: CQRS 아는척 하기
+tistoryTags: CQRS,Architecuture
+tistoryVisibility: "0"
+tistoryCategory: "1096106"
+tistorySkipModal: true
+tistoryPostId: "122"
+tistoryPostUrl: https://ondj.tistory.com/122
+---
 [명령 모델이란? - Command Query Responsibility Segregation :: CQRS 아는척하기](https://www.youtube.com/watch?v=xf0kXMTFJm8)
 
 **명령 (Command)**

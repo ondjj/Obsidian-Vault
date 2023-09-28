@@ -3,9 +3,15 @@ tags:
   - design-patterns
   - creational
   - pattern
-Factory-method: 
-banner: 
 sticker: lucide//boxes
+tistoryBlogName: ondj
+tistoryTitle: Factory Method
+tistoryTags: design-patterns,creational,pattern
+tistoryVisibility: "0"
+tistoryCategory: "1096109"
+tistorySkipModal: true
+tistoryPostId: "120"
+tistoryPostUrl: https://ondj.tistory.com/120
 ---
 ![](https://velog.velcdn.com/images/ondj/post/0292af50-9a2e-491c-aaca-760692c071b8/image.png)
 
