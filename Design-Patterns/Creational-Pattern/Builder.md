@@ -1,5 +1,13 @@
 ---
 sticker: lucide//hammer
+tistoryBlogName: ondj
+tistoryTitle: Builder
+tistoryTags: builder,design-pattern,디자인패턴,빌더
+tistoryVisibility: "3"
+tistoryCategory: "1096109"
+tistorySkipModal: true
+tistoryPostId: "119"
+tistoryPostUrl: https://ondj.tistory.com/119
 ---
 ![[Screenshot 2023-09-25 at 3.30.50 PM.png]]
 

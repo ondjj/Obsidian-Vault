@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: CI-CD(Continuous Integration-Continuous Delivery)
+tistoryTags: CI/CD
+tistoryVisibility: "0"
+tistoryCategory: "1096103"
+tistorySkipModal: true
+tistoryPostId: "117"
+tistoryPostUrl: https://ondj.tistory.com/117
+---
 **참고 블로그**
 - [RedHat](https://www.redhat.com/ko/topics/devops/what-is-ci-cd)
 

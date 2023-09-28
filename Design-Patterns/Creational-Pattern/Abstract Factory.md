@@ -1,5 +1,13 @@
 ---
 sticker: lucide//factory
+tistoryBlogName: ondj
+tistoryTitle: Abstract Factory
+tistoryTags: design-pattern,디자인패턴,추상팩토리
+tistoryVisibility: "0"
+tistoryCategory: "1096109"
+tistorySkipModal: true
+tistoryPostId: "118"
+tistoryPostUrl: https://ondj.tistory.com/118
 ---
 
 
