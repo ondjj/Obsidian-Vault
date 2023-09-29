@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: DBMS 개요
+tistoryTags: database,dbms
+tistoryVisibility: "0"
+tistoryCategory: "1096104"
+tistorySkipModal: true
+tistoryPostId: "131"
+tistoryPostUrl: https://ondj.tistory.com/131
+---
 
 
 **DBMS 개요**

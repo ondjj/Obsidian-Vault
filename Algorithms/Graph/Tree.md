@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Tree
+tistoryTags: algorithms,tree
+tistoryVisibility: "0"
+tistoryCategory: "1096118"
+tistorySkipModal: true
+tistoryPostId: "129"
+tistoryPostUrl: https://ondj.tistory.com/129
+---
 트리(Tree)는 계층적인 구조를 표현하는 비선형 자료구조로 노드(Node)와 간선(Edge)으로 이루어져 있으며, 루트(Root) 노드에서부터 여러 개의 자식 노드들이 분기(Branch)되어 나가는 형태로 구성된다.
 
 대표적인 트리의 종류는 다음과 같다.

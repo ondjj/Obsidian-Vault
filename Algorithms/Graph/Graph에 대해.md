@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Graph에 대해
+tistoryTags: algorithms,graph
+tistoryVisibility: "0"
+tistoryCategory: "1096118"
+tistorySkipModal: true
+tistoryPostId: "127"
+tistoryPostUrl: https://ondj.tistory.com/127
+---
 그래프(Graph)와 트리(Tree)는 모두 노드(Node)와 노드를 연결하는 간선(Edge)으로 구성된 자료 구조이지만 몇 가지 차이점이 존재한다.
 
 1. 순환(cycle)의 존재 여부

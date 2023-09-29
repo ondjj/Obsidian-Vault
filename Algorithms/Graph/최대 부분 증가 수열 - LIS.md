@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: 최대 부분 증가 수열 - LIS
+tistoryTags: algorithms,lis
+tistoryVisibility: "0"
+tistoryCategory: "1096118"
+tistorySkipModal: true
+tistoryPostId: "130"
+tistoryPostUrl: https://ondj.tistory.com/130
+---
 # Longest Increasing Subsequence
 
 [나무위키](https://namu.wiki/w/%EC%B5%9C%EC%9E%A5%20%EC%A6%9D%EA%B0%80%20%EB%B6%80%EB%B6%84%20%EC%88%98%EC%97%B4)

@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Graph 활용-1
+tistoryTags: algorithms,graph
+tistoryVisibility: "0"
+tistoryCategory: "1096118"
+tistorySkipModal: true
+tistoryPostId: "128"
+tistoryPostUrl: https://ondj.tistory.com/128
+---
 **출처** [엔지니어 대한민국](https://www.youtube.com/watch?v=9ZZbA2iPjtM&list=PLjSkJdbr_gFY8VgactUs6_Jc9Ke8cPzZP&index=8)
 
 ### 문제 1. Graph에서 두지점의 경로찾기
