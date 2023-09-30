@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: 모든 웹은 API
+tistoryTags: web,api
+tistoryVisibility: "0"
+tistoryCategory: "1096108"
+tistorySkipModal: true
+tistoryPostId: "146"
+tistoryPostUrl: https://ondj.tistory.com/146
+---
 ### API ⌨️
 웹 API는 웹 서버와 웹 브라우저 간의 애플리케이션 처리 인터페이스를 의미한다. 
 모든 웹 서비스는 API 이지만 모든 API가 웹 서비스는 아닌데 

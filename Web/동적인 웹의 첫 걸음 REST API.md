@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: 동적인 웹의 첫 걸음 REST API
+tistoryTags: rest,rest api, web
+tistoryVisibility: "0"
+tistoryCategory: "1096108"
+tistorySkipModal: true
+tistoryPostId: "145"
+tistoryPostUrl: https://ondj.tistory.com/145
+---
 ### REST API ⌨️
 `모든 웹은 API` 포스트를 통해 API가 어떤 역할을 하는지 배울 수 있었고 추가로 최신 웹은 REST API로 구성되어 동작하고 있다는걸 간단하게 알아보았는데, API면 API지 Representational State Transfer API 라는 건 도대체 뭘까?
 

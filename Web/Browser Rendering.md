@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: Browser Rendering
+tistoryTags: rendering,web,browser
+tistoryVisibility: "0"
+tistoryCategory: "1096108"
+tistorySkipModal: true
+tistoryPostId: "144"
+tistoryPostUrl: https://ondj.tistory.com/144
+---
 
 # 개념
 
@@ -12,11 +22,10 @@
 
 - 메타 태그를 적절히 설정 하는것으로 효율을 높힐 수 있다.
 
-- <title> <description> <robots> <canonical> 
+- `<title> <description> <robots> <canonical> `
 
 - 오픈 그래프(Open Graph) 태그를 적절히 설정하는것으로 효율을 높힐 수 있다.
 
-————————————————————————————————————
 
 👀 **클라이언트 사이드 렌더링(Client Side Rendering)**
 
