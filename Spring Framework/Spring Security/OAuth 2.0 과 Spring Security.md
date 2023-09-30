@@ -1,3 +1,13 @@
+---
+tistoryBlogName: ondj
+tistoryTitle: OAuth 2.0 과 Spring Security
+tistoryTags: spring,security,spring-security,oauth2
+tistoryVisibility: "0"
+tistoryCategory: "1096244"
+tistorySkipModal: true
+tistoryPostId: "143"
+tistoryPostUrl: https://ondj.tistory.com/143
+---
 OAuth는 사용자가 제3자 애플리케이션에 대한 액세스 권한을 부여할 수 있도록
 중간 매개체 역할을하는 보안 프레임워크로 웹 및 모바일 애플리케이션에서 사용자 인증 및 권한 부여를 위한 개방형 표준 프로토콜이다.
 
