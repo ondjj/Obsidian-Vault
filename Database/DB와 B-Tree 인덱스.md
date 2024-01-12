@@ -60,5 +60,13 @@ B-Tree는 여러 키와 하위 포인터가 포함된 노드가 있는 계층 �
 - 초기에는 root 노드를 제외한 모든 노드는 secondary storage에 있다고 가정한다.
 - 초기에는 데이터 자체도 모두 secondary storage에 있다고 가정한다.
 
+#### AVL Tree Index
+
+![](https://i.imgur.com/hJdwqG1.png)
+
+`b` 컬럼을 기준으로 AVL Tree를 사용하여 인덱스를 생성한다면 아래와 같은 구조를 갖게된다.
+`*`으로 표시된 부분은 각 
+
+![](https://i.imgur.com/BCaXAb1.png)
 
 
