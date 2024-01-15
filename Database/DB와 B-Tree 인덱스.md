@@ -1,5 +1,13 @@
 ---
 sticker: lucide//text-selection
+tistoryBlogName: ondj
+tistoryTitle: DB와 B-Tree 인덱스
+tistoryTags: B-Tree,DB 인덱스,인덱스,B Tree
+tistoryVisibility: "3"
+tistoryCategory: "1096104"
+tistorySkipModal: true
+tistoryPostId: "157"
+tistoryPostUrl: https://ondj.tistory.com/157
 ---
 B-Tree는 정렬된 데이터를 유지하고 로그 시간 내에 검색, 삽입 및 삭제가 가능한 균형 트리 자료 구조로 대용량 데이터를 효율적으로 구성하고 관리하는데 주로 사용된다. 
 
@@ -77,4 +85,43 @@ B-Tree는 여러 키와 하위 포인터가 포함된 노드가 있는 계층 �
 
 #### B-Tree Index
 
-다음은 B-Tree 기반으로 인덱스를 만들어 조회하는 과정으로 5차 B-Tree
+다음은 B-Tree 기반으로 인덱스를 만들어 조회하는 과정으로 5차 B-Tree를 통해 조회한다.
+AVL 트리와 같이 루트 노드를 제외한 데이터는 모두 `secondary storage`에 저장되어있고 B-Tree의 특성상 루트 노드의 데이터들은 모두 오름차순으로 정렬되어있다.
+
+![](https://i.imgur.com/QwAbJbY.png)
+
+- 먼저 조회하고자 하는 데이터와 루트 노드를 순차적으로 비교한다.
+- 루트 노드 4는 조회하고자 하는 데이터 5보다 작다.
+- 4가 가르키는 데이터는 조회하지 않는다.
+- 루트 노드 8은 조회하고자 하는 데이터 5보다 크다.
+- 8이 가르키는 데이터 셋을 조회한다.
+- 조회 대상 발견
+
+![](https://i.imgur.com/yPnsBOS.png)
+
+B-Tree를 통해 데이터를 읽을 경우 총 두 번의 접근을 통해 데이터를 조회할 수 있었다.
+
+**주요 차이점**
+- AVL 트리는 노드의 데이터 수가 1개로 고정되어있지만, B-Tree는 2~4개이다.
+- AVL 트리는 1 ~ 2개의 자녀 노드를 가질 수 있었지만, B-Tree는 3 ~ 5개의 자녀 노드를 가질 수 있었다.
+- Secondary Storage는 block 단위로 읽고 쓴다, B-Tree는 연속된 데이터를 가지기 때문에 저장 공간에 대한 활용도가 더 좋다.
+
+결과적으로 B-Tree는 데이터를 찾을 때 탐색 범위를 빠르게 좁힐 수 있고, 저장 공간을 연관된 데이터로 채울 수 있기 때문에 활용도 측면에서도 AVL Tree 보다 더 좋다고 볼 수 있는 것이다.
+
+## About Think
+
+##### Self-balancing BST의 노드들도 Block 안에 최대한 담는다면?
+
+![dm6zShG.png](https://i.imgur.com/dm6zShG.png)
+
+동일한 시간 복잡도를 가지는 AVL 트리를 DB Index에 사용하지 않는 이유 중 하나로 Block, 공간 활용도가 떨어진다는것이 있었다. 
+
+그렇다면 AVL 트리의 노드 역시 Block 안에 담으면 되는것 아닌가? 라는 생각이 들 수 있는데 결국 이 방식이 B-Tree가 동작하는 방식이기 때문에 이는 불필요한 자원의 낭비라고 볼 수 있다.
+
+##### Hash Index의 사용
+
+Hash Index는 삽입, 삭제, 조회의 시간 복잡도가 모두 O(1)로 성능면에서 뛰어나기 때문에 MySQL 등은 Hash Index를 제공하기도 한다.
+
+하지만 Hash Index는 equality(=) 조회만 가능하고 범위 기반 검색이나 정렬에는 사용될 수 없다는 단점이 있다.
+
+[출처 : 쉬운 코드](https://www.youtube.com/watch?v=liPSnc6Wzfk)
